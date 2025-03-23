@@ -1,0 +1,47 @@
+********************************************************************************
+***                       Micro-Cap 12.2.0.3 (64 bit)                        ***
+***                                                                          ***
+***                                                                          ***
+***                        Dynamic DC of Adaptation2                         ***
+***                           23/03/2025 16:12:57                            ***
+********************************************************************************
+
+*****************************************************
+***                Temperature=27                 ***
+*****************************************************
+
+Temperature=27
+
+DC Operating Point Voltages
+===========================
+Node         Voltage  Node         Voltage  Node         Voltage 
+AMONT         9.000   2             1.286   3           642.857m 
+
+
+Operating Point for Devices of Type Resistor
+============================================
+Instance:                R1            R2            R4            R3
+V                   -1.286        -7.714      -642.857m      642.857m
+Power DC Terms:
+PD                   1.653m       59.510m        4.133m        4.133m
+
+DC Pin Currents:
+Ir                  -1.286m       -7.714m       -6.429m        6.429m
+
+Device Variables:
+tc1                  0.000         0.000         0.000         0.000 
+tc2                  0.000         0.000         0.000         0.000 
+
+
+
+Operating Point for Devices of Type SPICE Source
+================================================
+Instance:              VCC
+V                   9.000 
+Power DC Terms:
+PG                 69.429m
+
+DC Pin Currents:
+ISource            -7.714m
+
+
