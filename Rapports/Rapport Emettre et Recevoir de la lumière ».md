@@ -26,3 +26,11 @@ Vout vaut donc $Vout = 9-0,3=8,7V$
 
 
 ![[Copie d'écran_20250422_170023.png]]
+
+On fonction de la piste, le courant Ic max doit pouvoir être compris entre 0,1mA et 2mA sans jamais dépasser 2mA.
+
+On pourras regler RE (le potentiomètre) sans jamais faire dépasser 2mA, même si le potentiomètre est à 0.
+
+Dans le cas ou Ic est à 0,1mA, R = 89000$\ohm$
+Dans le cas ou Ic est à 2mA, R = 4450$\ohm$
+
