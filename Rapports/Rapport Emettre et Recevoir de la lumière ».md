@@ -25,3 +25,4 @@ Si on envoie 50mA dans la diode émettrice on recoit une tension Vce de 0,3V
 Vout vaut donc $Vout = 9-0,3=8,7V$
 
 
+![[Copie d'écran_20250422_170023.png]]
