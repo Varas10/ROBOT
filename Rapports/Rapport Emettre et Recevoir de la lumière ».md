@@ -13,7 +13,15 @@ Le courant va du Collecteur à l’émetteur et Vce sort par Vout.
 La relation entre Vce, ic, Vcc et RE est : 
 $Vcc=Vce + Ic * RE$
 
-![[Copie d'écran_20250422_165237.png]]
+![[Courbe charge f(Ic et Vce).png]]
 La courbe rouge représente la charge.
 
 #### Dans le cas de la charge représenté par la courbe rouge :
+
+$RE = \frac{Vcc-Vce}{Ic} =\frac{9-0}{0,001}=9k\ohm$
+
+Si on envoie 50mA dans la diode émettrice on recoit une tension Vce de 0,3V
+
+Vout vaut donc $Vout = 9-0,3=8,7V$
+
+
