@@ -1,36 +1,125 @@
-## Théorie
+## Étude théorique
 
-Une diode émettrice CNY70 doit émettre une lumière d'une longueur d'onde de 950nm dans le domaine de l'infrarouge.
+### Présentation du capteur CNY70
 
-Le courant responsable de l'émission de la lumière vas de la borne 1 à la borne 5 du connecteur en passant par les deux capteurs.
+- **Type de lumière émise** : Infrarouge (λ = 950 nm).
+    
+- **Spectre** : Non visible à l'œil nu.
+    
+- **Constitution** du capteur :
+    
+    - **Diode émettrice** : Cathode et anode identifiées sur le schéma.
+        
+    - **Phototransistor récepteur** : Collecteur (C) et émetteur (E) également identifiés.
+        
 
-La sortie du Capteur 1 se trouve sur la broche 4 et la sortie du Capteur 2 se trouve sur la broche 3.
+### Schéma de routage
 
-On choisi un montage Common-Collector Amplifier pour faire augmenter Vout lorsque la lumière augmente.
+- Le schéma fourni montre la carte "yeux" avec :
+    
+    - **Entrée** : Signal générant la lumière codée.
+        
+    - **Sorties** :
+        
+        - Capteur 1 : Broche 4.
+            
+        - Capteur 2 : Broche 3.
+            
+    - **Alimentation** : 9V.
+        
+    - **Masse**.
+        
+- **Trajet du courant** : Surligné en rouge sur le schéma pour visualiser le chemin de l’émission lumineuse.
+    
 
-Le courant va du Collecteur à l’émetteur et Vce sort par Vout.
+### Fonctionnement du montage transistor
 
-La relation entre Vce, ic, Vcc et RE est : 
-$Vcc=Vce + Ic * RE$
+- Choix du montage : **Montage collecteur commun** pour obtenir une **tension Vout** qui augmente avec l’intensité lumineuse reçue.
+    
+- Relations utilisées :
+    
+    Vcc=Vce+Ic×ReVcc = Vce + Ic \times ReVcc=Vce+Ic×Re
+- Calculs :
+    
+    - **Re** :
+        
+        Re=9V−0V0,001A=9000 ΩRe = \frac{9V - 0V}{0,001A} = 9000\, \OmegaRe=0,001A9V−0V​=9000Ω
+    - **Vce** pour 50mA d’émission : ≈ 0,3V.
+        
+    - **Vout** correspondant :
+        
+        Vout=9V−0,3V=8,7VVout = 9V - 0,3V = 8,7VVout=9V−0,3V=8,7V
 
-![[Courbe charge f(Ic et Vce).png]]
-La courbe rouge représente la charge.
+### Limitation du courant LED
 
-#### Dans le cas de la charge représenté par la courbe rouge :
+- Calcul de la résistance RD pour limiter le courant LED à 50 mA sous 9V :
+    
+    RD=9V−1,25V0,05A=155 ΩRD = \frac{9V - 1,25V}{0,05A} = 155\, \OmegaRD=0,05A9V−1,25V​=155Ω
+- **Valeur normalisée** utilisée : **150 Ω**.
+    
 
-$RE = \frac{Vcc-Vce}{Ic} =\frac{9-0}{0,001}=9k\ohm$
+### Conclusion de l'étude théorique
 
-Si on envoie 50mA dans la diode émettrice on recoit une tension Vce de 0,3V
+Grâce à cette étude, la conception de la carte "yeux" permet d’assurer :
 
-Vout vaut donc $Vout = 9-0,3=8,7V$
+- La bonne émission de lumière infrarouge.
+    
+- La détection fiable des surfaces via un phototransistor.
+    
+- La protection des composants par le choix adapté des résistances.
+    
 
+---
 
-![[Copie d'écran_20250422_170023.png]]
+## Étude pratique
 
-On fonction de la piste, le courant Ic max doit pouvoir être compris entre 0,1mA et 2mA sans jamais dépasser 2mA.
+### Câblage de la carte
 
-On pourras regler RE (le potentiomètre) sans jamais faire dépasser 2mA, même si le potentiomètre est à 0.
+- **Entrée du signal générant la lumière codée** : 9V.
+    
+- **RLeds** : 150 Ω installée (protection des LEDs).
+    
+- **Re** : montage ajustable pour limiter le courant dans les phototransistors.
+    
 
-Dans le cas ou Ic est à 0,1mA, R = 89000$\ohm$
-Dans le cas ou Ic est à 2mA, R = 4450$\ohm$
+### Mesures réalisées
 
+- **Mesure du courant LED** :
+    
+    ILED=5,37V150 Ω=35 mAI_{LED} = \frac{5,37V}{150\,\Omega} = 35\, mAILED​=150Ω5,37V​=35mA
+- **Mesures de Vout** :
+    
+    - **Surface blanche** : 0,1 V.
+        
+    - **Surface noire** : 0 V.
+        
+
+### Rejet des lumières parasites
+
+- Pour éviter l'influence de l'éclairage ambiant, la lumière émise est modulée :
+    
+    - **Signal carré** appliqué : 0-9V, **fréquence = 2kHz**.
+        
+- Relevés :
+    
+    - Chronogrammes du signal d'entrée (générant la lumière codée).
+        
+    - Chronogrammes de la sortie Vout sur surface blanche et noire.
+        
+
+### Résultats observés
+
+- Lorsque la surface est blanche, Vout présente une réponse claire et modulée.
+    
+- Lorsque la surface est noire, Vout est quasiment nul, ce qui permet une détection fiable du changement de surface.
+    
+
+### Conclusion de l'étude pratique
+
+L'étude pratique a permis de :
+
+- Vérifier le fonctionnement du montage théorique.
+    
+- Valider la modulation comme méthode efficace pour rejeter les interférences lumineuses.
+    
+- S'assurer que le robot pourra différencier correctement les pistes claires et sombres lors de son suivi de ligne.
