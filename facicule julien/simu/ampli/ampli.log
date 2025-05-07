@@ -1,15 +1,16 @@
 LTspice 24.1.8 for Windows
 Circuit: C:\Users\julie\OneDrive\Documents\GitHub\ROBOT\facicule julien\simu\ampli\ampli.net
-Start Time: Wed May  7 09:10:13 2025
+Start Time: Wed May  7 09:37:22 2025
 solver = Normal
 Maximum thread count: 4
 tnom = 27
 temp = 27
 method = trap
 Direct Newton iteration for .op point succeeded.
-Total elapsed time: 0.047 seconds.
+Total elapsed time: 0.062 seconds.
 
 Files loaded:
 C:\Users\julie\OneDrive\Documents\GitHub\ROBOT\facicule julien\simu\ampli\ampli.net
+C:\Users\julie\AppData\Local\LTspice\lib\cmp\standard.dio
 C:\Users\julie\AppData\Local\LTspice\lib\sub\UniversalOpAmp1.lib
 
