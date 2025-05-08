@@ -26,7 +26,7 @@ L’émission du signal lumineux est réalisée grâce à un circuit analogique 
 - Une **LED infrarouge** qui émet la lumière selon le signal de l’oscillateur.
     
 - Une **résistance de limitation de courant** pour protéger la LED et assurer un fonctionnement stable.
-    
+
 
 Le **circuit oscillateur** est conçu de manière à produire un signal carré ayant :
 
@@ -41,13 +41,14 @@ Le **circuit oscillateur** est conçu de manière à produire un signal carré a
 
 Le montage peut être représenté par le schéma fonctionnel suivant :
 
-`Oscillateur (NE555 ou circuit RC) → Résistance (150 Ω) → LED IR → Transmission lumineuse`
+![[Schéma NE555.png]]
 
 ### **Calculs des composants**
 
 La fréquence d’oscillation d’un NE555 en mode astable est donnée par la formule :
 
-$f=1.44(R1+2R2)×Cf = \frac{1.44}{(R1 + 2R2) \times C}f=(R1+2R2)×C1.44​$
+$f=1.44(R1+2R2)×C$
+$f = \frac{1.44}{(R1 + 2R2) \times C}f=(R1+2R2)×C1.44​$
 
 Avec :
 
@@ -58,11 +59,11 @@ Avec :
 
 En choisissant :
 
-- R1=1kΩ 
+- $R1=1kΩ$
     
-- R2=680kΩ
+- $R2=680kΩ$
     
-- C=1nF
+- $C=1nF$
     
 
 On obtient une fréquence de **2 kHz**, conforme aux spécifications du projet.
@@ -126,14 +127,20 @@ Des tests ont été effectués en utilisant un **récepteur optique** pour véri
     - Signal carré propre.
         
     - Fréquence stable à 2 kHz.
-        
+		
+	- Vlum est en jaune et Vc est en bleu.
+	 ![[Pasted image 20250508101309.png]]
+	
 2. **Signal lumineux détecté par la photodiode** :
     
     - Même fréquence de 2 kHz.
         
     - Amplitude variable en fonction de la distance et de l’alignement du capteur.
-        
-
+	    
+    - Fond blanc :
+     ![[Pasted image 20250508101130.png]]
+	- Fond noir :
+	![[Pasted image 20250508101213.png]]
 ### **Difficultés rencontrées et solutions apportées**
 
 - **Problème :** LED infrarouge trop faible dans certains cas.
