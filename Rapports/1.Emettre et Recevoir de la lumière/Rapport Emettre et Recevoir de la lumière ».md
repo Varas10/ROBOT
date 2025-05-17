@@ -31,7 +31,7 @@
         
 - **Trajet du courant** : Surligné en rouge sur le schéma pour visualiser le chemin de l’émission lumineuse.
     
-
+![[Routage, chemin du courant entre les deux capteurs.jpg]]
 ### Fonctionnement du montage transistor
 
 - Choix du montage : **Montage collecteur commun** pour obtenir une **tension Vout** qui augmente avec l’intensité lumineuse reçue.
@@ -43,21 +43,33 @@
     
     - **Re** :
         
-        Re=9V−0V0,001A=9000 ΩRe = \frac{9V - 0V}{0,001A} = 9000\, \OmegaRe=0,001A9V−0V​=9000Ω
+        $Re=9V−0V0,001A=9000 Ω$
     - **Vce** pour 50mA d’émission : ≈ 0,3V.
         
     - **Vout** correspondant :
         
-        Vout=9V−0,3V=8,7VVout = 9V - 0,3V = 8,7VVout=9V−0,3V=8,7V
+        $Vout=9V−0,3V=8,7V$
 
 ### Limitation du courant LED
 
 - Calcul de la résistance RD pour limiter le courant LED à 50 mA sous 9V :
     
-    RD=9V−1,25V0,05A=155 ΩRD = \frac{9V - 1,25V}{0,05A} = 155\, \OmegaRD=0,05A9V−1,25V​=155Ω
+    $RD=9V−1,25V0,05A=155 Ω$
 - **Valeur normalisée** utilisée : **150 Ω**.
-    
-
+	
+- Schéma lorsque le capteur est sur du blanc :
+	![[Sortie module avec lumière.png]]
+	On constate que la sortie ne dépasse pas les 9V
+- Schéma lorsque le capteur est entre le blanc et le noir :
+	![[sortie module avec lumière entre blanc et noir.png]]
+	La sortie est bien à 4,5V.
+## Résultats attendu :
+- Lorsque la lumière est très forte (10) :
+	![[Lumière a 10.png]]
+- Lorsque la lumière est moyenne (5) :
+	![[lumière à 5.png]]
+- Lorsque la lumière est très faible (1) :
+	![[lumière à 1.png]]
 ### Conclusion de l'étude théorique
 
 Grâce à cette étude, la conception de la carte "yeux" permet d’assurer :
@@ -86,7 +98,7 @@ Grâce à cette étude, la conception de la carte "yeux" permet d’assurer :
 
 - **Mesure du courant LED** :
     
-    ILED=5,37V150 Ω=35 mAI_{LED} = \frac{5,37V}{150\,\Omega} = 35\, mAILED​=150Ω5,37V​=35mA
+    $I_{LED} = \frac{5,37V}{150\,\Omega} = 35\, mA$
 - **Mesures de Vout** :
     
     - **Surface blanche** : 0,1 V.
