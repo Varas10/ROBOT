@@ -7,8 +7,21 @@ Shape Version=11.00
 Screen=2560,1440
 MCAPVersion=12.2.0.3
 Key ID=Demo
-NLCnt=102
+NLCnt=144
 TXCnt=13
+
+[shapedef]
+Name=555
+Rectangle=0,8,80,88
+FColor=None
+Line=0,32,-16,32
+Line=0,64,-16,64
+Line=40,88,40,104
+Line=32,8,32,-8
+Line=64,8,64,-8
+Line=80,32,96,32
+Line=16,8,16,-8
+Line=80,64,96,64
 
 [shapedef]
 Name=Animated Analog Bar
@@ -193,7 +206,7 @@ Name=Voltage Source
 Definition=VSpice
 Shape=SPICE_V
 Mask=4865
-Used=40
+Used=41
 memo=Voltage Source
 Label Offset=19,13,15,13
 PinCnt=2
@@ -205,7 +218,7 @@ Name=Ground
 Definition=Ground
 Shape=Ground
 Mask=1793
-Used=275
+Used=279
 memo=Ground
 Label Offset=0,0,0,0
 PinCnt=1
@@ -226,8 +239,8 @@ Pin="Minus",0,10,-29,5
 Name=Capacitor
 Definition=Capacitor
 Shape=Capacitor
-Mask=6913
-Used=29
+Mask=7937
+Used=31
 memo=Capacitor
 Label Offset=16,12,12,12
 PinCnt=2
@@ -239,7 +252,7 @@ Name=Resistor
 Definition=Resistor
 Shape=Resistor
 Mask=6913
-Used=177
+Used=179
 memo=Resistor
 Label Offset=18,6,8,11
 PinCnt=2
@@ -291,7 +304,7 @@ Name=Battery
 Definition=Battery
 Shape=Battery
 Mask=6913
-Used=64
+Used=65
 memo=Battery
 Label Offset=19,7,10,13
 PinCnt=2
@@ -302,13 +315,31 @@ Pin="Minus",0,0,-10,-5
 Name=Diode
 Definition=Diode
 Shape=Diode
-Mask=4609
-Used=12
+Mask=4865
+Used=13
 memo=Diode
 Label Offset=17,10,12,12
 PinCnt=2
 Pin="Anode",6,0,-9,-8
 Pin="Cathode",0,0,-20,-8
+
+[compdef]
+Name=555
+Definition=Macro
+Shape=555
+Mask=20480
+Used=3
+memo=555 Timer Macro
+Label Offset=87,72,-20,88
+PinCnt=8
+Pin="RESET",d,2,-1,-33,17
+Pin="DISCH",a,12,8,-49,8
+Pin="THRES",a,-2,4,20,7
+Pin="TRIG",a,-2,8,20,8
+Pin="OUT",d,12,4,-39,7
+Pin="CONT",a,8,-1,5,17
+Pin="VCC",a,4,-1,5,17
+Pin="GND",a,5,13,3,-3
 
 [Circuit]
 Window Placement=2,3, -1,-1, -8,-31, 234,234,1689,802
@@ -2827,7 +2858,7 @@ Pxs=896,584,1136,584
 
 [Comp]
 Name=Voltage Source
-Px=288,504
+Px=344,504
 Rot=3
 
 [Attr]
@@ -2874,26 +2905,23 @@ V=DC 0 AC 1 0 Pulse 0 5 0 1u 1u 250u 500u
 Style=256
 
 [Wire]
-Pxs=288,432,288,456
+Pxs=344,432,344,456
 
 [Comp]
 Name=Ground
-Px=288,544
+Px=344,544
 Rot=1
 
 [Wire]
-Pxs=288,504,288,544
+Pxs=344,504,344,544
 
 [Wire]
-Pxs=288,432,328,432
+Pxs=344,432,368,432
 
 [Comp]
 Name=Ground
 Px=2064,552
 Rot=1
-
-[Wire]
-Pxs=328,432,488,432
 
 [Comp]
 Name=Capacitor
@@ -3209,6 +3237,253 @@ Pxs=1984,456,1984,536
 [Wire]
 Pxs=1984,536,2064,536
 
+[Comp]
+Name=555
+Style=ShowPinText
+Px=144,464
+
+[Attr]
+ON=87,72,PART
+V=X5
+Style=8192
+
+[Attr]
+ON=87,86,FILE
+V=555
+
+[Attr]
+ON=87,114,PACKAGE
+V=DIP8
+
+[Comp]
+Name=Battery
+Px=56,536
+Rot=3
+
+[Attr]
+ON=-26,-27,PART
+V=V7
+Style=8192
+
+[Attr]
+ON=-18,-41,VALUE
+V=9
+Style=8192
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Wire]
+Pxs=56,440,56,488
+
+[Wire]
+Pxs=56,440,160,440
+
+[Wire]
+Pxs=176,440,176,456
+
+[Wire]
+Pxs=160,440,160,456
+
+[Wire]
+Pxs=160,440,176,440
+
+[Wire]
+Pxs=104,528,128,528
+
+[Wire]
+Pxs=104,496,104,528
+
+[Wire]
+Pxs=104,496,128,496
+
+[Comp]
+Name=Ground
+Px=184,680
+Rot=7
+
+[Comp]
+Name=Ground
+Px=56,672
+Rot=7
+
+[Wire]
+Pxs=56,536,56,672
+
+[Wire]
+Pxs=184,568,184,680
+
+[Wire]
+Pxs=368,432,488,432
+
+[Comp]
+Name=Capacitor
+Px=288,656
+Rot=3
+
+[Attr]
+ON=-29,-26,PART
+V=C7
+Style=8192
+
+[Attr]
+ON=-28,-40,CAPACITANCE
+V=1n
+Style=8192
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Comp]
+Name=Resistor
+Px=288,584
+Rot=3
+
+[Attr]
+ON=-24,-25,PART
+V=R8
+Style=8192
+
+[Attr]
+ON=-39,-39,RESISTANCE
+V=720k
+Style=8192
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Comp]
+Name=Resistor
+Px=288,512
+Rot=3
+
+[Attr]
+ON=-24,-25,PART
+V=R9
+Style=8192
+
+[Attr]
+ON=-39,-39,RESISTANCE
+V=720k
+Style=8192
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Comp]
+Name=Ground
+Px=288,680
+Rot=7
+
+[Wire]
+Pxs=288,656,288,680
+
+[Wire]
+Pxs=288,584,288,600
+
+[Wire]
+Pxs=288,512,288,528
+
+[Wire]
+Pxs=288,440,288,464
+
+[Wire]
+Pxs=176,440,288,440
+
+[Wire]
+Pxs=240,528,288,528
+
+[Wire]
+Pxs=288,528,288,536
+
+[Comp]
+Name=Diode
+Px=304,584
+Rot=3
+
+[Attr]
+ON=-29,-26,PART
+V=D3
+Style=8192
+
+[Attr]
+ON=-76,-40,MODEL
+V=$GENERIC
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Wire]
+Pxs=288,528,304,528
+
+[Wire]
+Pxs=304,528,304,536
+
+[Wire]
+Pxs=304,584,304,600
+
+[Wire]
+Pxs=288,600,304,600
+
+[Wire]
+Pxs=288,600,288,608
+
+[Wire]
+Pxs=104,528,104,600
+
+[Wire]
+Pxs=104,600,288,600
+
+[Wire]
+Pxs=248,432,248,496
+
+[Wire]
+Pxs=248,432,344,432
+
+[Wire]
+Pxs=240,496,248,496
+
+[Comp]
+Name=Capacitor
+Px=208,376
+Rot=7
+
+[Attr]
+ON=-29,12,PART
+V=C8
+Style=8192
+
+[Attr]
+ON=-36,26,CAPACITANCE
+V=10n
+Style=8192
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Comp]
+Name=Ground
+Px=232,384
+Rot=7
+
+[Wire]
+Pxs=208,368,208,376
+
+[Wire]
+Pxs=208,368,232,368
+
+[Wire]
+Pxs=232,368,232,384
+
+[Wire]
+Pxs=208,424,208,456
+
 [Grid Text]
 Text="F1"
 Px=192,304
@@ -3295,7 +3570,7 @@ CBorder=None
 
 [Grid Text]
 Text="OSC"
-Px=328,432
+Px=368,432
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -3533,9 +3808,9 @@ PrinterScale=1.0021261149139185
 Scale 0=1
 Scale 1=1
 Scale 2=1
-SB 3=26,181
+SB 3=0,157
 Scale 3=0.66666666666666663
-Px=406,777
+Px=353,672
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
