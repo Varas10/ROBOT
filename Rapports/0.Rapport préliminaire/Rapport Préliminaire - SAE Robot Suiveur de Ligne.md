@@ -19,7 +19,7 @@ Ensuite, de la **lumière** *reflèteras sur la piste* ainsi que des *lumières 
 
 ## Spécifications fonctionnelles
 
-Il doit **réagir aux claquements de mains**. Cependant, des **sons parasites**, résonnés par les murs de la pièce par exemple, peuvent interférer avec le robot.
+Il doit **réagir aux claquements de mains**. Cependant, des **sons parasites**, résonné par les murs de la pièce par exemple, peuvent interférer avec le robot.
 
 De plus, il doit **indiquer sont état** (veille / allumé) avec *une LED*
 

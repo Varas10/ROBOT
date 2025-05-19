@@ -129,7 +129,7 @@ Des tests ont été effectués en utilisant un **récepteur optique** pour véri
     - Fréquence stable à 2 kHz.
 		
 	- Vlum est en jaune et Vc est en bleu.
-	 ![[Pasted image 20250508101309.png]]
+	 ![[Vlum (jaune) et Vc (bleu).jpg]]
 	
 2. **Signal lumineux détecté par la photodiode** :
     
@@ -138,9 +138,9 @@ Des tests ont été effectués en utilisant un **récepteur optique** pour véri
     - Amplitude variable en fonction de la distance et de l’alignement du capteur.
 	    
     - Fond blanc :
-     ![[Pasted image 20250508101130.png]]
+     ![[fond blanc seance 2.jpg]]
 	- Fond noir :
-	![[Pasted image 20250508101213.png]]
+	![[fond noir seance 2.jpg]]
 ### **Difficultés rencontrées et solutions apportées**
 
 - **Problème :** LED infrarouge trop faible dans certains cas.

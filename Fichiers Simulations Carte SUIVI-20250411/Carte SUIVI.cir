@@ -7,7 +7,7 @@ Shape Version=11.00
 Screen=1920,1080
 MCAPVersion=12.2.0.3
 Key ID=Demo
-NLCnt=144
+NLCnt=139
 TXCnt=18
 
 [shapedef]
@@ -341,7 +341,7 @@ Pin="VCC",a,4,-1,5,17
 Pin="GND",a,5,13,3,-3
 
 [Circuit]
-Window Placement=0,3, -1,-1, -4,-30, 87,87,1541,616
+Window Placement=0,3, -1,-1, -4,-30, 0,0,801,274
 Default Object=Color=#000000,Pattern=Dot6
 Default Object Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
 Default Object Apply Border To Text=No
@@ -371,7 +371,7 @@ Show Grid Text=True
 Object=Picture
 FT=PIC
 CBorder=None
-Px=903,308,986,403
+Px=951,308,1034,403
 Rot=0
 KeepAspectRatio=False
 OrgName=D:\InSync\1 -IUT-\0) Télétravail\Robot 1°A\images\montage capteur.jpg
@@ -534,7 +534,7 @@ Data=d9
 Object=Picture
 FT=PIC
 CBorder=None
-Px=943,309,975,362
+Px=991,309,1023,362
 Rot=0
 KeepAspectRatio=False
 OrgName=D:\InSync\1 -IUT-\0) Télétravail\Robot 1°A\images\montage capteur.jpg
@@ -576,7 +576,7 @@ Data=d9
 Object=Picture
 FT=PIC
 CBorder=None
-Px=441,291,540,341
+Px=489,291,588,341
 Rot=0
 KeepAspectRatio=False
 OrgName=D:\InSync\1 -IUT-\0) Télétravail\Robot 1°A\images\Capteur envoi lumière.jpg
@@ -949,14 +949,14 @@ Data=d0f131dfef147d4fb468a28af9c3db[0a28a28030]3fffd9
 Object=FC_Process
 CBorder=#000000
 Pattern=Dot6
-Px=40,280,384,744
+Px=16,160,360,624
 GridSnap=True
 
 [Object]
 Object=Picture
 FT=PIC
 CBorder=None
-Px=829,332,876,387
+Px=877,332,924,387
 Rot=0
 KeepAspectRatio=False
 OrgName=D:\InSync\1 -IUT-\0) Télétravail\Robot 1°A\images\cny70.jpg
@@ -1267,7 +1267,7 @@ Data=28a005[a28a28009]a28a2803ffd9
 Object=Picture
 FT=PIC
 CBorder=None
-Px=58,284,146,359
+Px=106,284,194,359
 Rot=0
 KeepAspectRatio=False
 OrgName=Clipboard.bmp
@@ -2433,7 +2433,7 @@ Data=(ff5)[fefefeff5](ff4)(fe3)(ff861)(fe3)(ff5)[fefefeff2](ff4)(fe3)(ff71361)
 
 [Comp]
 Name=Mul
-Px=488,432
+Px=536,432
 
 [Attr]
 ON=47,3,PART
@@ -2454,7 +2454,7 @@ V
 
 [Comp]
 Name=Voltage Source
-Px=520,584
+Px=568,584
 Rot=3
 
 [Attr]
@@ -2472,27 +2472,27 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=520,504,584,504
+Pxs=568,504,632,504
 
 [Wire]
-Pxs=520,584,520,672
+Pxs=568,584,568,672
 
 [Wire]
-Pxs=552,400,552,432
+Pxs=600,400,600,432
 
 [Wire]
-Pxs=584,672,800,672
+Pxs=632,672,848,672
 
 [Comp]
 Name=Ground
-Px=584,672
+Px=632,672
 Rot=7
 
 [Comp]
 Name=Animated Analog Bar
 Color=#C0C0C0
 FColor=#FDD844
-Px=616,488
+Px=664,488
 
 [Attr]
 ON=21,27,PART
@@ -2511,16 +2511,16 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=584,568,584,672
+Pxs=632,568,632,672
 
 [Wire]
-Pxs=768,536,800,536
+Pxs=816,536,848,536
 
 [Comp]
 Name=Capacitor
 Color=#C0C0C0
 FColor=#C0C0C0
-Px=768,584
+Px=816,584
 Rot=5
 
 [Attr]
@@ -2577,7 +2577,7 @@ Color=#C0C0C0
 
 [Comp]
 Name=Resistor
-Px=800,496
+Px=848,496
 Rot=5
 
 [Attr]
@@ -2595,12 +2595,12 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=800,496,800,536
+Pxs=848,496,848,536
 
 [Comp]
 Name=Opto
 ShowPackagePins=True
-Px=800,536
+Px=848,536
 
 [Attr]
 ON=52,10,PART
@@ -2616,13 +2616,13 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=800,584,800,672
+Pxs=848,584,848,672
 
 [Comp]
 Name=Capacitor
 Color=#C0C0C0
 FColor=#C0C0C0
-Px=832,632
+Px=880,632
 Rot=5
 
 [Attr]
@@ -2678,26 +2678,26 @@ V
 Color=#C0C0C0
 
 [Wire]
-Pxs=832,584,848,584
+Pxs=880,584,896,584
 
 [Wire]
-Pxs=848,632,848,672
+Pxs=896,632,896,672
 
 [Wire]
-Pxs=800,672,832,672
+Pxs=848,672,880,672
 
 [Wire]
-Pxs=848,432,848,536
+Pxs=896,432,896,536
 
 [Wire]
-Pxs=848,432,944,432
+Pxs=896,432,992,432
 
 [Wire]
-Pxs=848,584,896,584
+Pxs=896,584,944,584
 
 [Comp]
 Name=Resistor
-Px=848,584
+Px=896,584
 Rot=1
 
 [Attr]
@@ -2716,12 +2716,12 @@ V
 
 [Comp]
 Name=Ground
-Px=832,672
+Px=880,672
 Rot=7
 
 [Comp]
 Name=Voltage Source
-Px=944,480
+Px=992,480
 Rot=3
 
 [Attr]
@@ -2739,16 +2739,16 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=944,480,944,488
+Pxs=992,480,992,488
 
 [Comp]
 Name=Ground
-Px=944,488
+Px=992,488
 Rot=7
 
 [Comp]
 Name=Animated Meter
-Px=2064,464
+Px=2112,464
 
 [Attr]
 ON=68,98,PART
@@ -2787,143 +2787,84 @@ V
 Object=FC_Process
 CBorder=#000000
 Pattern=Dot6
-Px=440,280,712,744
+Px=488,280,760,744
 GridSnap=True
 
 [Wire]
-Pxs=552,432,800,432
+Pxs=600,432,848,432
 
 [Object]
 Object=FC_Process
 CBorder=#000000
 Pattern=Dot6
-Px=752,280,992,744
-GridSnap=True
-
-[Object]
-Object=FC_Process
-CBorder=#000000
-Pattern=Dot6
-Px=1104,280,1376,744
+Px=800,280,1040,744
 GridSnap=True
 
 [Object]
 Object=FC_Process
 CBorder=#000000
 Pattern=Dot6
-Px=1728,280,2000,744
+Px=1152,280,1424,744
 GridSnap=True
 
 [Object]
 Object=FC_Process
 CBorder=#000000
 Pattern=Dot6
-Px=1424,280,1696,744
+Px=1776,280,2048,744
+GridSnap=True
+
+[Object]
+Object=FC_Process
+CBorder=#000000
+Pattern=Dot6
+Px=1472,280,1744,744
 GridSnap=True
 
 [Wire]
-Pxs=520,672,584,672
+Pxs=568,672,632,672
 
 [Wire]
-Pxs=520,464,520,504
+Pxs=568,464,568,504
 
 [Wire]
-Pxs=584,552,616,552
+Pxs=632,552,664,552
 
 [Wire]
-Pxs=584,568,616,568
+Pxs=632,568,664,568
 
 [Wire]
-Pxs=520,504,520,536
+Pxs=568,504,568,536
 
 [Wire]
-Pxs=584,504,584,552
+Pxs=632,504,632,552
 
 [Wire]
-Pxs=800,432,800,448
+Pxs=848,432,848,448
 
 [Wire]
-Pxs=832,632,848,632
+Pxs=880,632,896,632
 
 [Wire]
-Pxs=832,672,848,672
+Pxs=880,672,896,672
 
 [Wire]
-Pxs=768,584,800,584
+Pxs=816,584,848,584
 
 [Wire]
-Pxs=896,584,1136,584
-
-[Comp]
-Name=Voltage Source
-Px=344,504
-Rot=3
-
-[Attr]
-ON=-31,-27,PART
-V=V4
-Style=8192
-
-[Attr]
-ON=-288,-41,VALUE
-V=DC 0 AC 1 0 Pulse 0 5 0 1u 1u 250u 500u
-
-[Attr]
-ON=0,0,PACKAGE
-V
-
-[Attr]
-ON=0,0,Saved_None
-V=DC 9V
-Style=256
-
-[Attr]
-ON=0,0,SMOOTHING
-V=N
-Style=256
-
-[Attr]
-ON=0,0,Saved_PulseS
-V=N
-Style=256
-
-[Attr]
-ON=0,0,FRACTION
-V=.2
-Style=256
-
-[Attr]
-ON=0,0,Saved_PulseF
-V=.2
-Style=256
-
-[Attr]
-ON=0,0,Saved_Pulse
-V=DC 0 AC 1 0 Pulse 0 5 0 1u 1u 250u 500u
-Style=256
+Pxs=944,584,1184,584
 
 [Wire]
-Pxs=344,432,344,456
+Pxs=296,432,416,432
 
 [Comp]
 Name=Ground
-Px=344,544
-Rot=1
-
-[Wire]
-Pxs=344,504,344,544
-
-[Wire]
-Pxs=344,432,368,432
-
-[Comp]
-Name=Ground
-Px=2064,552
+Px=2112,552
 Rot=1
 
 [Comp]
 Name=Capacitor
-Px=1184,584
+Px=1232,584
 Rot=6
 
 [Attr]
@@ -2942,7 +2883,7 @@ V
 
 [Comp]
 Name=Resistor
-Px=1208,640
+Px=1256,640
 Rot=5
 
 [Attr]
@@ -2960,22 +2901,22 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=1184,584,1208,584
+Pxs=1232,584,1256,584
 
 [Wire]
-Pxs=1208,584,1208,592
+Pxs=1256,584,1256,592
 
 [Comp]
 Name=Ground
-Px=1208,664
+Px=1256,664
 Rot=7
 
 [Wire]
-Pxs=1208,640,1208,664
+Pxs=1256,640,1256,664
 
 [Comp]
 Name=Opamp
-Px=1536,432
+Px=1584,432
 
 [Attr]
 ON=44,29,PART
@@ -3036,7 +2977,7 @@ Page=3
 
 [Comp]
 Name=Diode
-Px=1456,592
+Px=1504,592
 Rot=7
 
 [Attr]
@@ -3054,7 +2995,7 @@ V
 
 [Comp]
 Name=Resistor
-Px=1512,584
+Px=1560,584
 Rot=5
 
 [Attr]
@@ -3073,7 +3014,7 @@ V
 
 [Comp]
 Name=Resistor
-Px=1584,528
+Px=1632,528
 Rot=6
 
 [Attr]
@@ -3092,56 +3033,56 @@ V
 
 [Comp]
 Name=Ground
-Px=1456,672
+Px=1504,672
 Rot=7
 
 [Comp]
 Name=Ground
-Px=1512,672
+Px=1560,672
 Rot=7
 
 [Wire]
-Pxs=1512,584,1512,672
+Pxs=1560,584,1560,672
 
 [Wire]
-Pxs=1456,640,1456,672
+Pxs=1504,640,1504,672
 
 [Wire]
-Pxs=1456,432,1456,584
+Pxs=1504,432,1504,584
 
 [Wire]
-Pxs=1456,432,1536,432
+Pxs=1504,432,1584,432
 
 [Wire]
-Pxs=1208,584,1456,584
+Pxs=1256,584,1504,584
 
 [Wire]
-Pxs=1456,584,1456,592
+Pxs=1504,584,1504,592
 
 [Wire]
-Pxs=1512,480,1536,480
+Pxs=1560,480,1584,480
 
 [Wire]
-Pxs=1512,480,1512,528
+Pxs=1560,480,1560,528
 
 [Wire]
-Pxs=1512,528,1536,528
+Pxs=1560,528,1584,528
 
 [Wire]
-Pxs=1512,528,1512,536
+Pxs=1560,528,1560,536
 
 [Wire]
-Pxs=1584,528,1624,528
+Pxs=1632,528,1672,528
 
 [Wire]
-Pxs=1624,456,1624,528
+Pxs=1672,456,1672,528
 
 [Wire]
-Pxs=1608,456,1624,456
+Pxs=1656,456,1672,456
 
 [Comp]
 Name=Diode
-Px=1800,456
+Px=1848,456
 Rot=2
 
 [Attr]
@@ -3159,7 +3100,7 @@ V
 
 [Comp]
 Name=Resistor
-Px=1824,512
+Px=1872,512
 Rot=3
 
 [Attr]
@@ -3178,7 +3119,7 @@ V
 
 [Comp]
 Name=Capacitor
-Px=1872,512
+Px=1920,512
 Rot=3
 
 [Attr]
@@ -3196,49 +3137,49 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=1800,456,1824,456
-
-[Wire]
-Pxs=1824,456,1824,464
-
-[Wire]
-Pxs=1824,456,1872,456
+Pxs=1848,456,1872,456
 
 [Wire]
 Pxs=1872,456,1872,464
+
+[Wire]
+Pxs=1872,456,1920,456
+
+[Wire]
+Pxs=1920,456,1920,464
+
+[Comp]
+Name=Ground
+Px=1920,672
+Rot=7
 
 [Comp]
 Name=Ground
 Px=1872,672
 Rot=7
 
-[Comp]
-Name=Ground
-Px=1824,672
-Rot=7
-
-[Wire]
-Pxs=1824,512,1824,672
-
 [Wire]
 Pxs=1872,512,1872,672
 
 [Wire]
-Pxs=1624,456,1752,456
+Pxs=1920,512,1920,672
 
 [Wire]
-Pxs=1872,456,1984,456
+Pxs=1672,456,1800,456
 
 [Wire]
-Pxs=1984,456,1984,536
+Pxs=1920,456,2032,456
 
 [Wire]
-Pxs=1984,536,2064,536
+Pxs=2032,456,2032,536
+
+[Wire]
+Pxs=2032,536,2112,536
 
 [Comp]
 Name=555
 Style=ShowPinText
-Px=144,464
+Px=192,464
 
 [Attr]
 ON=87,72,PART
@@ -3255,7 +3196,7 @@ V=DIP8
 
 [Comp]
 Name=Battery
-Px=56,536
+Px=104,536
 Rot=3
 
 [Attr]
@@ -3273,51 +3214,51 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=56,440,56,488
+Pxs=104,440,104,488
 
 [Wire]
-Pxs=56,440,160,440
+Pxs=104,440,208,440
 
 [Wire]
-Pxs=176,440,176,456
+Pxs=224,440,224,456
 
 [Wire]
-Pxs=160,440,160,456
+Pxs=208,440,208,456
 
 [Wire]
-Pxs=160,440,176,440
+Pxs=208,440,224,440
 
 [Wire]
-Pxs=104,528,128,528
+Pxs=152,528,176,528
 
 [Wire]
-Pxs=104,496,104,528
+Pxs=152,496,152,528
 
 [Wire]
-Pxs=104,496,128,496
+Pxs=152,496,176,496
 
 [Comp]
 Name=Ground
-Px=184,680
+Px=232,680
 Rot=7
 
 [Comp]
 Name=Ground
-Px=56,672
+Px=104,672
 Rot=7
 
 [Wire]
-Pxs=56,536,56,672
+Pxs=104,536,104,672
 
 [Wire]
-Pxs=184,568,184,680
+Pxs=232,568,232,680
 
 [Wire]
-Pxs=368,432,488,432
+Pxs=416,432,536,432
 
 [Comp]
 Name=Capacitor
-Px=288,656
+Px=336,656
 Rot=3
 
 [Attr]
@@ -3336,7 +3277,7 @@ V
 
 [Comp]
 Name=Resistor
-Px=288,584
+Px=336,584
 Rot=3
 
 [Attr]
@@ -3355,7 +3296,7 @@ V
 
 [Comp]
 Name=Resistor
-Px=288,512
+Px=336,512
 Rot=3
 
 [Attr]
@@ -3374,33 +3315,33 @@ V
 
 [Comp]
 Name=Ground
-Px=288,680
+Px=336,680
 Rot=7
 
 [Wire]
-Pxs=288,656,288,680
+Pxs=336,656,336,680
 
 [Wire]
-Pxs=288,584,288,600
+Pxs=336,584,336,600
 
 [Wire]
-Pxs=288,512,288,528
+Pxs=336,512,336,528
 
 [Wire]
-Pxs=288,440,288,464
+Pxs=336,440,336,464
 
 [Wire]
-Pxs=176,440,288,440
+Pxs=224,440,336,440
 
 [Wire]
-Pxs=240,528,288,528
+Pxs=288,528,336,528
 
 [Wire]
-Pxs=288,528,288,536
+Pxs=336,528,336,536
 
 [Comp]
 Name=Diode
-Px=304,584
+Px=352,584
 Rot=3
 
 [Attr]
@@ -3417,38 +3358,35 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=288,528,304,528
+Pxs=336,528,352,528
 
 [Wire]
-Pxs=304,528,304,536
+Pxs=352,528,352,536
 
 [Wire]
-Pxs=304,584,304,600
+Pxs=352,584,352,600
 
 [Wire]
-Pxs=288,600,304,600
+Pxs=336,600,352,600
 
 [Wire]
-Pxs=288,600,288,608
+Pxs=336,600,336,608
 
 [Wire]
-Pxs=104,528,104,600
+Pxs=152,528,152,600
 
 [Wire]
-Pxs=104,600,288,600
+Pxs=152,600,336,600
 
 [Wire]
-Pxs=248,432,248,496
+Pxs=296,432,296,496
 
 [Wire]
-Pxs=248,432,344,432
-
-[Wire]
-Pxs=240,496,248,496
+Pxs=288,496,296,496
 
 [Comp]
 Name=Capacitor
-Px=208,376
+Px=256,376
 Rot=7
 
 [Attr]
@@ -3467,24 +3405,24 @@ V
 
 [Comp]
 Name=Ground
-Px=232,384
+Px=280,384
 Rot=7
 
 [Wire]
-Pxs=208,368,208,376
+Pxs=256,368,256,376
 
 [Wire]
-Pxs=208,368,232,368
+Pxs=256,368,280,368
 
 [Wire]
-Pxs=232,368,232,384
+Pxs=280,368,280,384
 
 [Wire]
-Pxs=208,424,208,456
+Pxs=256,424,256,456
 
 [Grid Text]
 Text="Oscillateur"
-Px=176,320
+Px=224,320
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -3492,7 +3430,7 @@ CBorder=None
 
 [Grid Text]
 Text="Capteur (yeux)"
-Px=832,320
+Px=880,320
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -3500,7 +3438,7 @@ CBorder=None
 
 [Grid Text]
 Text="Detecteur crête de Vsortie_capteur filtrée et amplifié"
-Px=1736,336
+Px=1784,336
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -3508,7 +3446,7 @@ CBorder=None
 
 [Grid Text]
 Text="Amplification de Vsortie_capteur filtrée"
-Px=1456,336
+Px=1504,336
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -3516,7 +3454,7 @@ CBorder=None
 
 [Grid Text]
 Text="Filtrage de Vsortie_capteur"
-Px=1192,328
+Px=1240,328
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -3524,7 +3462,7 @@ CBorder=None
 
 [Grid Text]
 Text="F1"
-Px=192,304
+Px=240,304
 Height=-24
 FStyle=4
 Color=#202020
@@ -3535,7 +3473,7 @@ CBorder=None
 
 [Grid Text]
 Text="sortie_modulee_avec_lumiere"
-Px=552,400
+Px=600,400
 Angle=11
 GridSnap=True
 JustifyH=Left
@@ -3544,7 +3482,7 @@ CBorder=None
 
 [Grid Text]
 Text="sortie_capteur"
-Px=896,584
+Px=944,584
 Angle=19
 GridSnap=True
 JustifyH=Left
@@ -3553,7 +3491,7 @@ CBorder=None
 
 [Grid Text]
 Text="F2"
-Px=560,304
+Px=608,304
 Height=-24
 FStyle=4
 Color=#202020
@@ -3564,7 +3502,7 @@ CBorder=None
 
 [Grid Text]
 Text="F3"
-Px=864,304
+Px=912,304
 Height=-24
 FStyle=4
 Color=#202020
@@ -3575,7 +3513,7 @@ CBorder=None
 
 [Grid Text]
 Text="F4"
-Px=1216,312
+Px=1264,312
 Height=-24
 FStyle=4
 Color=#202020
@@ -3586,7 +3524,7 @@ CBorder=None
 
 [Grid Text]
 Text="F5"
-Px=1536,312
+Px=1584,312
 Height=-24
 FStyle=4
 Color=#202020
@@ -3597,7 +3535,7 @@ CBorder=None
 
 [Grid Text]
 Text="F6"
-Px=1832,312
+Px=1880,312
 Height=-24
 FStyle=4
 Color=#202020
@@ -3608,7 +3546,7 @@ CBorder=None
 
 [Grid Text]
 Text="OSC"
-Px=368,432
+Px=416,432
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -3625,7 +3563,7 @@ CBorder=None
 
 [Grid Text]
 Text="VC"
-Px=1568,424
+Px=1616,424
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -3642,7 +3580,7 @@ CBorder=None
 
 [Grid Text]
 Text="VE"
-Px=1568,488
+Px=1616,488
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -3656,7 +3594,7 @@ CurrentSection 3=0
 Splitter.xs=0
 Splitter.ys=0
 TextQuad=4099
-Scale=1
+Scale=0.66666666666666663
 GridType=Bold6
 GridUser=10
 ShapeGroups="Main","Euro","Polarity","Main1","Main11","Electrolytic","GroundArrow","DeMorgan"
@@ -3848,7 +3786,7 @@ Scale 1=1
 Scale 2=1
 SB 3=0,253
 Scale 3=0.66666666666666663
-Px=217,310
+Px=393,446
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000

@@ -27,17 +27,17 @@ Un **amplificateur opérationnel non-inverseur** est retenu car il permet :
     
 - Un gain ajustable selon la formule :
     
-    Av=1+R2R1A_v = 1 + \frac{R_2}{R_1}Av​=1+R1​R2​​
+    $A_v = 1 + \frac{R_2}{R_1}$
 
 ### Calculs :
 
 Pour obtenir un gain de 6 (objectif : 1,5 V → 9 V) :
 
-- Choix de R1=680 ΩR_1 = 680\ \OmegaR1​=680 Ω (valeur normalisée)
+- Choix de $R_1 = 680\ \Omega$ (valeur normalisée)
     
-- Calcul de R2=(Av−1)×R1=5×680=3400 ΩR_2 = (A_v - 1) \times R_1 = 5 \times 680 = 3400\ \OmegaR2​=(Av​−1)×R1​=5×680=3400 Ω
+- Calcul de $R2=(Av−1)×R1=5×680=3400 Ω$
     
-- Choix de R2=3.3 kΩR_2 = 3.3\ k\OmegaR2​=3.3 kΩ (valeur normalisée proche)
+- Choix de $R_2 = 3.3\ k\Omega$ (valeur normalisée proche)
     
 
 ### Simulation :
