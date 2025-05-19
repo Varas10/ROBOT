@@ -7,8 +7,8 @@ Shape Version=11.00
 Screen=1920,1080
 MCAPVersion=12.2.0.3
 Key ID=Demo
-NLCnt=158
-TXCnt=20
+NLCnt=152
+TXCnt=21
 
 [shapedef]
 Name=555
@@ -2791,9 +2791,6 @@ Pxs=848,704,880,704
 Pxs=896,432,896,536
 
 [Wire]
-Pxs=896,432,992,432
-
-[Wire]
 Pxs=896,584,944,584
 
 [Comp]
@@ -2808,7 +2805,7 @@ Style=8192
 
 [Attr]
 ON=8,25,RESISTANCE
-V=600
+V=4,7k
 Style=8192
 
 [Attr]
@@ -2821,35 +2818,8 @@ Px=880,704
 Rot=7
 
 [Comp]
-Name=Voltage Source
-Px=992,480
-Rot=3
-
-[Attr]
-ON=-31,-27,PART
-V=V3
-Style=8192
-
-[Attr]
-ON=-31,-41,VALUE
-V=9V
-Style=8192
-
-[Attr]
-ON=0,0,PACKAGE
-V
-
-[Wire]
-Pxs=992,480,992,488
-
-[Comp]
-Name=Ground
-Px=992,488
-Rot=7
-
-[Comp]
 Name=Animated Meter
-Px=2400,456
+Px=1992,576
 
 [Attr]
 ON=68,98,PART
@@ -2893,13 +2863,6 @@ GridSnap=True
 
 [Wire]
 Pxs=600,432,848,432
-
-[Object]
-Object=FC_Process
-CBorder=#000000
-Pattern=Dot6
-Px=800,312,1040,776
-GridSnap=True
 
 [Object]
 Object=FC_Process
@@ -3045,7 +3008,7 @@ Style=8192
 
 [Attr]
 ON=-26,-27,VALUE
-V=15
+V=9
 Style=8192
 
 [Comp]
@@ -3067,7 +3030,7 @@ Style=8192
 
 [Attr]
 ON=-31,-27,VALUE
-V=-15
+V=0
 Style=8192
 
 [Comp]
@@ -3263,13 +3226,13 @@ Rot=7
 Pxs=1872,512,1872,672
 
 [Wire]
-Pxs=1920,512,1920,672
+Pxs=1920,512,1920,664
 
 [Wire]
 Pxs=1672,456,1800,456
 
 [Wire]
-Pxs=1920,456,2032,456
+Pxs=1920,456,1960,456
 
 [Wire]
 Pxs=2032,456,2032,536
@@ -3388,7 +3351,7 @@ Style=8192
 
 [Attr]
 ON=-39,-39,RESISTANCE
-V=720k
+V=33k
 Style=8192
 
 [Attr]
@@ -3407,7 +3370,7 @@ Style=8192
 
 [Attr]
 ON=-39,-39,RESISTANCE
-V=720k
+V=33k
 Style=8192
 
 [Attr]
@@ -3593,13 +3556,7 @@ V=TO-92
 Pxs=2136,488,2136,512
 
 [Wire]
-Pxs=2192,664,2192,672
-
-[Wire]
-Pxs=2136,560,2136,592
-
-[Wire]
-Pxs=2136,488,2232,488
+Pxs=2136,560,2136,664
 
 [Comp]
 Name=LR_A67F-TYP
@@ -3622,18 +3579,6 @@ V=0.13
 [Attr]
 ON=-37,-89,PACKAGE
 V=SMT
-
-[Wire]
-Pxs=2232,536,2232,592
-
-[Wire]
-Pxs=2136,592,2232,592
-
-[Wire]
-Pxs=2136,592,2136,664
-
-[Wire]
-Pxs=2232,488,2232,528
 
 [Comp]
 Name=Resistor
@@ -3665,6 +3610,21 @@ Pxs=2080,344,2136,344
 
 [Wire]
 Pxs=104,416,104,440
+
+[Wire]
+Pxs=1960,456,1960,648
+
+[Wire]
+Pxs=1960,648,1992,648
+
+[Wire]
+Pxs=1960,456,2032,456
+
+[Wire]
+Pxs=1920,664,1992,664
+
+[Wire]
+Pxs=1920,664,1920,672
 
 [Grid Text]
 Text="Oscillateur"
@@ -3848,6 +3808,14 @@ JustifyH=Left
 JustifyV=Bottom
 CBorder=None
 
+[Grid Text]
+Text="V_alim"
+Px=896,432
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
 [Schematic]
 CurrentSection 0=0
 CurrentSection 1=0
@@ -3856,7 +3824,7 @@ CurrentSection 3=0
 Splitter.xs=0
 Splitter.ys=0
 TextQuad=4099
-Scale=0.66666666666666663
+Scale=1
 GridType=Bold6
 GridUser=10
 ShapeGroups="Main","Euro","Polarity","Main1","Main11","Electrolytic","GroundArrow","DeMorgan"
@@ -4046,9 +4014,9 @@ PrinterScale=1.0021261149139185
 Scale 0=1
 Scale 1=1
 Scale 2=1
-SB 3=0,305
-Scale 3=0.66666666666666663
-Px=287,546
+SB 3=1799,171
+Scale 3=1
+Px=1924,666
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
@@ -4130,8 +4098,8 @@ PrinterScale=1
 Scale 0=1
 Scale 1=1
 Scale 2=1
-Scale 3=1
-Px=0,0
+Scale 3=0.5
+Px=88,63
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
