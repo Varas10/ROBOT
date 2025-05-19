@@ -7,7 +7,7 @@ Shape Version=11.00
 Screen=1920,1080
 MCAPVersion=12.2.0.3
 Key ID=Demo
-NLCnt=147
+NLCnt=152
 TXCnt=21
 
 [shapedef]
@@ -2819,7 +2819,7 @@ Rot=7
 
 [Comp]
 Name=Animated Meter
-Px=2248,472
+Px=1992,576
 
 [Attr]
 ON=68,98,PART
@@ -3226,13 +3226,13 @@ Rot=7
 Pxs=1872,512,1872,672
 
 [Wire]
-Pxs=1920,512,1920,672
+Pxs=1920,512,1920,664
 
 [Wire]
 Pxs=1672,456,1800,456
 
 [Wire]
-Pxs=1920,456,2032,456
+Pxs=1920,456,1960,456
 
 [Wire]
 Pxs=2032,456,2032,536
@@ -3611,6 +3611,21 @@ Pxs=2080,344,2136,344
 [Wire]
 Pxs=104,416,104,440
 
+[Wire]
+Pxs=1960,456,1960,648
+
+[Wire]
+Pxs=1960,648,1992,648
+
+[Wire]
+Pxs=1960,456,2032,456
+
+[Wire]
+Pxs=1920,664,1992,664
+
+[Wire]
+Pxs=1920,664,1920,672
+
 [Grid Text]
 Text="Oscillateur"
 Px=224,320
@@ -3809,7 +3824,7 @@ CurrentSection 3=0
 Splitter.xs=0
 Splitter.ys=0
 TextQuad=4099
-Scale=0.5
+Scale=1
 GridType=Bold6
 GridUser=10
 ShapeGroups="Main","Euro","Polarity","Main1","Main11","Electrolytic","GroundArrow","DeMorgan"
@@ -3999,9 +4014,9 @@ PrinterScale=1.0021261149139185
 Scale 0=1
 Scale 1=1
 Scale 2=1
-SB 3=1977,305
-Scale 3=0.66666666666666663
-Px=2454,632
+SB 3=1799,171
+Scale 3=1
+Px=1924,666
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000

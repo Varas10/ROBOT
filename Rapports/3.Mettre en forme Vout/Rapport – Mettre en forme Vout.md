@@ -92,7 +92,7 @@ Le montage permet de :
     
 - Signal de sortie Vs : réponse du filtre (Vs en jaune).
 	
-- ![[Pasted image 20250508102211.png]]
+- ![[filtrage ve.png]]
 
 On a testé trois cas :
 
@@ -125,10 +125,10 @@ On a testé trois cas :
 
 - **Surface noire** : pas de signal modulé, donc Vs ≈ 0.
 	
-- ![[Pasted image 20250508102237.png]]
+- ![[vout modulé surface noir.png]]
 - **Surface blanche** : modulation claire à 2 kHz visible sur Vs.
 	
--  ![[Pasted image 20250508102252.png]]
+-  ![[Vout modulé surface blanche.png]]
 
 Le filtre a bien supprimé le décalage continu et a laissé passer uniquement la modulation utile.
 

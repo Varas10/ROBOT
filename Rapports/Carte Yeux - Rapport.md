@@ -16,51 +16,120 @@ Des **sons** tels que les *claquements de mains* et des *sons parasites* vont r�
 
 Ensuite, de la **lumière** *reflèteras sur la piste* ainsi que des *lumières parasites*
 
-### Spécifications fonctionnelles
+### Fonction principale
 
-Il doit **réagir aux claquements de mains**. Cependant, des **sons parasites**, résonné par les murs de la pièce par exemple, peuvent interférer avec le robot.
+Le robot doit :
 
-De plus, il doit **indiquer sont état** (veille / allumé) avec *une LED*
+- Être **commandé par des claquements de mains** (allumage/extinction).
+    
+- **Suivre une ligne blanche sur fond noir** de manière autonome.
+    
+- **Afficher son état de fonctionnement à l’aide de deux LEDs** distinctes.
+    
+- Être **alimenté uniquement par piles**.
+    
 
-Ensuite, le robot doit pouvoir se déplacer en **suivant** une *ligne blanche sur fond noir*. On va faire **reflétée de la lumière sur la piste blanche** pour qu’*il détecte sa présence* et *la suivre*. Cependant, des **lumières parasites** peuvent venir gêner le robot et le faire dévier de sa trajectoire.
+---
 
-Enfin, il doit **être autonome**, c’est-à-dire qu’il doit être *alimenté avec des piles*.
+### Spécifications Fonctionnelles
 
-### spécifications opérationnelles
+- Réagit **aux claquements de mains**, tout en filtrant les **sons parasites** (bruits d’ambiance ou réverbération).
+    
+- **Affichage de l’état par deux LEDs** :
+    
+    - Une **LED rouge** : _allumée en mode veille_.
+        
+    - Une **LED blanche** : _allumée en mode actif_, avec **intensité variable** en fonction de la lumière détectée par les capteurs IR.
+        
+- Détection de piste basée sur la **réflexion de lumière infrarouge** sur la **ligne blanche**.
+    
+- Intégration de filtres et d’amplification pour éviter les **interférences lumineuses extérieures**.
+    
 
-Le robot devra **suivre une ligne blanche** qui comporte des *virages*, parfois des *absences de piste* mettront le robot à l’épreuve. Il devra **aller tout droit**.
+---
 
-Lors d’un croisement de piste le robot s’arrêtera et en ligne droite il atteindra sa vitesse maximale.
+### Spécifications Opérationnell**
 
-Il sera **commandé par claquement de main**, au premier claquement de main il *s’allumera* et au second il* s’arrêtera*. Le claquement de main serait au plus loin à 10m.
+- Le robot suit une **ligne blanche sinueuse**, même en cas de **virages ou interruptions temporaires**.
+    
+- Il doit :
+    
+    - **Aller tout droit** par défaut.
+        
+    - **S’arrêter** automatiquement en cas de **croisement de piste**.
+        
+    - Atteindre sa **vitesse maximale** sur ligne droite.
+        
+- Commande sonore par claquements :
+    
+    - 1er claquement → **activation** du robot.
+        
+    - 2e claquement → **arrêt** du robot.
+        
+    - Portée maximale : **10 mètres**.
+        
+- Par défaut, le robot est en **mode veille**.
+    
 
-Une LED affichera son état, s’il est en **veille**, la LED sera *allumée* et si il est en **marche**, une *LED blanche s’allumera* et *son intensité variera* en fonction de la lumière reçu par le capteur.
+---
 
-**Par défaut le robot sera en veille.**
+### Spécifications Technologiques
 
-### Spécifications technologiques
+- Technologie : **électronique analogique uniquement**.
+    
+- Composants principaux :
+    
+    - **CNY70** (capteurs IR),
+        
+    - **NE555**, **SG3524**, **CD4017**, **BD438**,
+        
+    - **Capteur à électret**,
+        
+    - **Moteurs à courant continu**.
+        
+- **Alimentation** :
+    
+    - **1 pile 9V** → pour la **commande**.
+        
+    - **4 piles de 1,5V (6V)** → pour la **puissance moteur**.
+        
+- Connexions assurées par une **carte fond de panier fournie**.
+    
+- Logiciels utilisés :
+    
+    - **Micro-Cap** (simulation analogique),
+        
+    - **Eagle** (routage des circuits imprimés).
+        
+- Support matériel fourni :
+    
+    - Châssis avec **2 roues motorisées**,
+        
+    - **Carte des yeux** (détection IR),
+        
+    - **Support de piles** intégré.
+        
 
-Le robot sera conçu à partir d’**électronique analogique**, les composants que nous allons utiliser seront : CNY70, SG3524, NE555, CD4017, BD438, capteur à électrets, moteurs à courant continu. 
+---
 
-De plus il sera alimenté par des piles : **1 pile de 9V** pour la *partie commande* et **4 piles de 1.5V** en série pour *la partie puissance*.
+### Fonctionnement général
 
-Les circuits imprimés conçu par nous-même seront reliée ensemble par une **carte fond de panier** *fournis*.
+- Deux capteurs **infrarouges CNY70** situés à l’avant détectent la **réflexion de lumière** sur la ligne blanche.
+    
+- Le robot ajuste sa trajectoire en temps réel :
+    
+    - Le **capteur gauche** contrôle le **moteur gauche**,
+        
+    - Le **capteur droit** contrôle le **moteur droit**.
+        
+- Logique de suivi :
+    
+    - Si le capteur gauche **perd la piste** et le droit la détecte → le robot **tourne à droite**.
+        
+    - Inversement pour un virage à gauche.
+        
+- Si **aucune piste n’est détectée**, il **avance en ligne droite**.
 
-Les logiciels mis à notre disposition sont *Micro-Cap et Eagle*.
-
-Le supports que l’on va nous fournir est constitué de 2 roues motorisées, d’une carte des yeux, d’une carte fond de panier et d’emplacements des piles, elles aussi fournis.
-
-## Fonctionnement
-
-Le robot se **repère** grâce à des *capteurs infrarouge*s placés à l'avant sous le robot.
-
- Il **suit une ligne blanche** qu’il détecte grâce à la lumière réfléchis par la piste, s’il **ne détecte pas la ligne**, il ira *tout droit*.
-
-De plus, **ajuste sa trajectoire** en fonction des informations captées, comme des intersections.
-
-Le **capteur gauche** contrôle le *moteur gauche* et le **capteur droit** contrôle le *moteur droit*.
-
-Si le **capteur gauche** ne détecte *plus de lumière* et que le **capteur droit** détecte encore la *lumière* alors le **moteur droit** iras *plus vite* que le moteur gauche pour **tourner à droit**, et inversement.
 
 ## Conception Fonctionnelle
 
@@ -73,37 +142,71 @@ Si le **capteur gauche** ne détecte *plus de lumière* et que le **capteur droi
 
 ### F1 : Détection du claquement de mains
 
-- Le robot détecte le **claquement de mains** à une distance comprise entre *5m et 10m* grâce à un *micro à électret* placé sur le haut de la carte et le **transforme** en un *ordre de marche/arrêt*.
+- Détection du **claquement de mains** entre **5 et 10 m** via un **micro à électret**.
+    
+- Sert à **passer de l’état de veille à la marche** (et inversement).
+    
+- Une **LED 5 mm** indique l’état de **veille** (allumée = en veille).
+    
+- **Signal de sortie** :
+    
+    - **9V** = robot **à l’arrêt**
+        
+    - **0V** = robot **en marche**
+        
 
- - Une *LED de 5mm* sur le haut de la carte **affiche son état** de veille (allumé = veille) et l’intensité lumineuse reçu par la piste (par une LED blanche).
+---
 
-- La tension de sortie passe à **9V** s’il est à l’*arrêt* et à **0V** s’il est en *marche*.
+### F2 : Suivi de piste (capteurs IR)
 
-### F2 : Repérage par rapport à la piste
+- Utilise des capteurs **CNY70** pour **émettre et capter** des infrarouges réfléchis par le sol.
+    
+- Objectif : **différencier la piste blanche** des autres surfaces ou lumières parasites.
+    
+- **Sortie capteurs** :
+    
+    - **6V** = piste blanche détectée
+        
+    - **0V** = rien détecté
+        
+- Une **LED blanche** ajuste son **intensité** selon la lumière reçue :
+    
+    - Forte intensité = piste bien détectée
+        
+    - Faible intensité = hors piste
+        
+- **Alimentation capteurs** : **pile 9V**
+    
 
-- Le robot se repère par rapport à la piste, il **émet** *des infrarouges* pour sonder le sol et **capter** *les infrarouges réfléchis*. Il doit être capable de **différencier** les lumière réfléchis par la piste par rapport aux *lumières parasites*.
+---
 
-- Chaque capteur va recevoir un signal, il sera de **6V** s’il détecte la *piste blanche* et il sera de **0V** s’il ne détecte *rien*.
+### F3 : Commande et contrôle des moteurs
 
-- Ensuite il va émettre de la lumière avec une **LED blanche**, son *intensité varie* en fonction de la quantité de lumière capté. S’il est **au-dessus de la piste blanche** son intensité sera *maximal* et inversement s’il ne capte rien.
+- Deux moteurs **indépendants**, chacun commandé par un capteur :
+    
+    - Capteur droit → moteur droit
+    - Capteur gauche → moteur gauche
 
-- La carte comportant les capteurs sera fournie. On utilise le *CNY70* comme composant et l’**alimentation** se fait par une *pile 9V*.
+- **Signal reçu par chaque moteur** :
+    
+    - **0V** = moteur à **vitesse maximale**
+    - **6V** = moteur à **vitesse minimale**
 
-### F3 : Commande du déplacement
+- Permet au robot de **s’adapter au parcours** (virages, corrections de trajectoire).
+    
+- On peut :
+    
+    - **Récupérer les signaux de commande** des moteurs
+    - **Contrôler le courant** fourni à chaque moteur
 
-- **Chaque moteur** est*indépendant*, donc l**eur vitesse peut varier** afin de faire *tourner le robot*. Ainsi le robot peut **s’adapter au parcours**.
+- **Courant moteur limité à 1A**
 
-- En fonction de sa position sur la piste il pourra **adapter la vitesse d’un de ses moteurs** pour par exemple suivre un virage. Pour cela, il y à **un capteur par moteur**, le *capteur de droite commande le moteur de droite* et *inversement pour le moteur de gauche*.
+- **Alimentations séparées** :
+    
+    - Partie **commande** (capteurs, SG3524) : **pile 9V**
+    - Partie **puissance** (moteurs, BD438) : **4 piles = 6V**
 
-- Si on reçoit un signal de **0V** on sait que le moteur est à sa *vitesse maximal*, inversement s’il on reçois un signal de **6V**, le moteur est à la *vitesse minimum*.
-
-- On doit pouvoir **récupérer les signaux de commandes** des *moteurs* ainsi que **contrôler le courant** dès les *moteurs*. Le courant d’un moteur est **limité à 1A**.
-
-- La **marche/arrêt** sera gérer en fonction du *signal d’autorisation de déplacement*, c’est-à-dire le claquement de main.
-
-- Si le signal est à **9V** alors il est *à l’arrêt* et *inversement* s’il est à **0V**.
-
-- La **partie commande** (capteurs et SG 3524 [contrôleur PWM]) seront *alimenté par une pile 9V* tandis que la **partie puissance**  (moteurs [à courant continu de 6V et courant nominal de 600mA] et transistor BD 438) seront alimenté par *4 piles en 6V*. Attention il faut **prévoir un découplage** **pour chaque partie** de *100µF*
+- Nécessité d’un **découplage avec condensateurs 100µF** pour **chaque partie**
 
 # 1. Émettre et Recevoir de la lumière
 ## Étude théorique
@@ -117,60 +220,48 @@ Si le **capteur gauche** ne détecte *plus de lumière* et que le **capteur droi
 - **Constitution** du capteur :
     
     - **Diode émettrice** : Cathode et anode identifiées sur le schéma.
-        
     - **Phototransistor récepteur** : Collecteur (C) et émetteur (E) également identifiés.
-        
 
 ### Schéma de routage
 
 - Le schéma fourni montre la carte "yeux" avec :
     
     - **Entrée** : Signal générant la lumière codée.
-        
     - **Sorties** :
-        
         - Capteur 1 : Broche 4.
-            
         - Capteur 2 : Broche 3.
-            
+		
     - **Alimentation** : 9V.
-        
     - **Masse**.
-        
+
 - **Trajet du courant** : Surligné en rouge sur le schéma pour visualiser le chemin de l’émission lumineuse.
     
-![[Routage, chemin du courant entre les deux capteurs - Seance 1.jpg]]
+	![[Routage, chemin du courant entre les deux capteurs - Seance 1.jpg]]
 ### Fonctionnement du montage transistor
 
 - Choix du montage : **Montage collecteur commun** pour obtenir une **tension Vout** qui augmente avec l’intensité lumineuse reçue.
     
-- Relations utilisées :
-    
-    Vcc=Vce+Ic×ReVcc = Vce + Ic \times ReVcc=Vce+Ic×Re
+- Relations utilisées : $Vcc = Vce + Ic \times Re$
+	
 - Calculs :
     
-    - **Re** :
-        
-        $Re=9V−0V0,001A=9000 Ω$
+    - **Re** :$Re=9V−0V*0,001A=9000 Ω$
     - **Vce** pour 50mA d’émission : ≈ 0,3V.
-        
-    - **Vout** correspondant :
-        
-        $Vout=9V−0,3V=8,7V$
+    - **Vout** correspondant : $Vout=9V−0,3V=8,7V$
 
 ### Limitation du courant LED
 
 - Calcul de la résistance RD pour limiter le courant LED à 50 mA sous 9V :
-    
-    $RD=9V−1,25V0,05A=155 Ω$
-- **Valeur normalisée** utilisée : **150 Ω**.
+    $RD=9V−1,25V0,05A=155 Ω$ (150$\ohm$ en valeur normalisée E12)
 	
 - Schéma lorsque le capteur est sur du blanc :
 	![[Sortie module avec lumière - seance 1.png]]
 	On constate que la sortie ne dépasse pas les 9V
+	
 - Schéma lorsque le capteur est entre le blanc et le noir :
 	![[sortie module avec lumière entre blanc et noir - seance 1.png]]
 	La sortie est bien à 4,5V.
+	
 ## Résultats attendu :
 - Lorsque la lumière est très forte (10) :
 	![[Lumière a 10 - seance 1.png]]
@@ -183,11 +274,8 @@ Si le **capteur gauche** ne détecte *plus de lumière* et que le **capteur droi
 Grâce à cette étude, la conception de la carte "yeux" permet d’assurer :
 
 - La bonne émission de lumière infrarouge.
-    
 - La détection fiable des surfaces via un phototransistor.
-    
 - La protection des composants par le choix adapté des résistances.
-    
 
 ---
 
@@ -196,37 +284,31 @@ Grâce à cette étude, la conception de la carte "yeux" permet d’assurer :
 ### Câblage de la carte
 
 - **Entrée du signal générant la lumière codée** : 9V.
-    
 - **RLeds** : 150 Ω installée (protection des LEDs).
-    
 - **Re** : montage ajustable pour limiter le courant dans les phototransistors.
-    
 
 ### Mesures réalisées
 
 - **Mesure du courant LED** :
-    
     $I_{LED} = \frac{5,37V}{150\,\Omega} = 35\, mA$
+
 - **Mesures de Vout** :
-    
     - **Surface blanche** : 0,1 V.
-        
     - **Surface noire** : 0 V.
-        
 
 ### Rejet des lumières parasites
 
 - Pour éviter l'influence de l'éclairage ambiant, la lumière émise est modulée :
     
     - **Signal carré** appliqué : 0-9V, **fréquence = 2kHz**.
-        
+
 - Relevés :
     
-    - Chronogrammes du signal d'entrée (générant la lumière codée).
-        
-    - Chronogrammes de la sortie Vout sur surface blanche et noire.
-        
-
+    - Signal codé généré pour la lumière (en bleu) et signal de sortie en jaune:
+		- Surface blanche :
+		![[fond blanc seance 2.jpg]]
+		- Surface noir :
+		![[fond noir seance 2.jpg]]
 ### Résultats observés
 
 - Lorsque la surface est blanche, Vout présente une réponse claire et modulée.
@@ -244,7 +326,7 @@ L'étude pratique a permis de :
     
 - S'assurer que le robot pourra différencier correctement les pistes claires et sombres lors de son suivi de ligne.
 
-# **2. Génération d’un signal de lumière codée**
+# 2. Génération d’un signal de lumière codée
 ## Analyse Théorique :
 
 ### **Objectif**
@@ -268,7 +350,7 @@ Le signal doit être **modulé en fréquence** afin d’être facilement différ
 
 L’émission du signal lumineux est réalisée grâce à un circuit analogique composé de :
 
-- Un **oscillateur** basé sur un circuit **NE555** (ou un oscillateur RC) permettant de générer un signal carré périodique.
+- Un **oscillateur** avec un **NE555** permettant de générer un signal carré périodique.
     
 - Une **LED infrarouge** qui émet la lumière selon le signal de l’oscillateur.
     
@@ -288,53 +370,26 @@ Le **circuit oscillateur** est conçu de manière à produire un signal carré a
 
 Le montage peut être représenté par le schéma fonctionnel suivant :
 
-![[Schéma NE555.png]]
+![[Pasted image 20250519182410.png]]
 
 ### **Calculs des composants**
 
 La fréquence d’oscillation d’un NE555 en mode astable est donnée par la formule :
 
 $f=1.44(R1+2R2)×C$
-$f = \frac{1.44}{(R1 + 2R2) \times C}f=(R1+2R2)×C1.44​$
-
-Avec :
-
-- R1 et R2 des résistances en ohms.
-    
-- C un condensateur en farads.
-    
+$f = \frac{1.44}{(R1 + 2R2) \times C}f=(R1+2R2)×C=1.44​kHz$
 
 En choisissant :
-
-- $R1=1kΩ$
+- $R9=R8=33kΩ$
     
-- $R2=680kΩ$
-    
-- $C=1nF$
-    
+- $C7=1nF$
 
 On obtient une fréquence de **2 kHz**, conforme aux spécifications du projet.
 
 ### **Conclusion du projet**
 
-Ce projet a permis de concevoir un émetteur optique fonctionnant uniquement en **analogique**, sans microcontrôleur. L’utilisation d’un **oscillateur autonome** garantit un fonctionnement stable et répétitif. La modulation à **2 kHz** permet une détection facile par un récepteur, tout en limitant les interférences dues à la lumière ambiante.
-
----
-
+Ce projet a abouti à la création d’un émetteur optique analogique, sans microcontrôleur, utilisant un oscillateur autonome pour un fonctionnement stable. La modulation à 2 kHz facilite la détection par le récepteur tout en réduisant les interférences lumineuses.
 ## Réalisation pratique de l’émetteur
-
-### Câblage et mise en place du montage
-
-Le montage a été assemblé sur une **plaque d’expérimentation (breadboard)**. Les connexions suivantes ont été réalisées :
-
-1. **Alimentation du circuit oscillateur** en 9V.
-    
-2. **Connexion du circuit NE555** en mode astable avec les composants passifs calculés précédemment.
-    
-3. **Branchement de la LED infrarouge** avec une **résistance série de 150 Ω** pour limiter le courant à environ **50 mA**.
-    
-4. Vérification du bon fonctionnement du circuit avec un **oscilloscope** en sortie de l’oscillateur.
-    
 
 ### Mesures et observations
 
@@ -343,20 +398,15 @@ Le montage a été assemblé sur une **plaque d’expérimentation (breadboard)*
 Le signal en sortie du circuit oscillateur a été mesuré à l’aide d’un oscilloscope :
 
 - **Forme d’onde :** signal carré propre et stable.
-    
 - **Tension maximale :** 9V.
-    
 - **Tension minimale :** 0V.
-    
 - **Fréquence mesurée :** environ **2 kHz**, conforme aux calculs théoriques.
-    
 
 #### 2. Observation du fonctionnement de la LED
 
 - Avec un téléphone, la LED infrarouge semble allumée en continu, car la fréquence de 2 kHz est trop rapide pour être perçue.
     
 - Avec l'oscilloscope, on observe que la LED clignote bien à la fréquence attendue.
-    
 
 ### Tests et validation du fonctionnement
 
@@ -365,7 +415,6 @@ Des tests ont été effectués en utilisant un **récepteur optique** pour véri
 - Le **capteur infrarouge (phototransistor)** détecte bien les impulsions lumineuses émises.
     
 - Avec l'**oscilloscope**, on retrouve un signal modulé correspondant à celui envoyé par l’oscillateur.
-    
 
 ### Chronogrammes observés
 
@@ -375,7 +424,7 @@ Des tests ont été effectués en utilisant un **récepteur optique** pour véri
         
     - Fréquence stable à 2 kHz.
 		
-	- Vlum est en jaune et Vc est en bleu.
+	- Vlumière est en jaune et Vcondensateur est en bleu.
 	 ![[Vlum (jaune) et Vc (bleu).jpg]]
 	
 2. **Signal lumineux détecté par la photodiode** :
@@ -393,11 +442,6 @@ Des tests ont été effectués en utilisant un **récepteur optique** pour véri
 - **Problème :** LED infrarouge trop faible dans certains cas.
     
     - **Solution :** Augmentation du courant en ajustant la résistance de limitation (passage de 150Ω à 100Ω).
-        
-- **Problème :** Interférences lumineuses.
-    
-    - **Solution :** Vérification dans un environnement sombre et orientation optimale du capteur.
-        
 
 ### Conclusion de la séance
 
@@ -418,26 +462,16 @@ Le signal Vout, issu du capteur optique (phototransistor), est un signal analogi
 - Une **composante alternative (AC)**, qui est l’image de la lumière codée (modulation de 2 kHz).
     
 - Une **composante continue (DC)**, due à la lumière ambiante et aux caractéristiques propres du capteur.
-    
 
 L’objectif de ce projet est de **supprimer la composante continue** pour ne conserver que la **composante alternative**, représentative du signal lumineux codé reçu.
 
----
-
-### Analyse du problème
-
-Le signal Vout capté contient une **valeur moyenne non nulle** (décalage DC), qui varie selon la luminosité ambiante ou la surface réfléchissante.  
-Ce décalage peut masquer ou fausser la détection de la modulation 2 kHz.
-
----
-
 ### Solution technique : le filtre passe-haut
 
-On utilise un **filtre passe-haut analogique** (filtre RC) pour supprimer la composante continue et ne laisser passer que les signaux alternatifs de fréquence suffisante.
+On utilise un **filtre passe-haut** (filtre RC) pour supprimer la composante continue et ne laisser passer que les signaux alternatifs de fréquence suffisante.
 
 #### Schéma de principe :
 
-![[Pasted image 20250508102008.png]]
+![[Filtre passa haut.png]]
 
 #### Calcul de la fréquence de coupure
 
@@ -449,21 +483,16 @@ $Fc=2πRC1​$
 
 Objectif : que **$Flum = 2 kHz$** soit **dans la bande passante**, donc $Fc < Flum$. On choisit :
 
-- **Fc = 200 Hz**, soit$ $Flum / 10.$
+- **Fc = 200 Hz**, soit $Flum / 10.$
     
 
 #### Choix des composants :
 
 - **C = 100 nF**
     
-- **R = 1 / (2π × 100 nF × 200 Hz) ≈ 7957 Ω**
-    
-- **Valeur normalisée de R choisie : 6,8 kΩ**
-    
+- **R = 1 / (2π × 100 nF × 200 Hz) ≈ 7957 Ω**, (valeur normalisé E12 = 6,8k$\ohm$)
 
 Ce filtre permet d’atténuer fortement les composantes inférieures à 200 Hz (dont le continu), tout en laissant passer efficacement la modulation de 2 kHz.
-
----
 
 ### Conclusion du projet
 
@@ -474,26 +503,8 @@ Le montage permet de :
 - Conserver uniquement le signal modulé à 2 kHz, qui représente l’information utile.
     
 - Faciliter le traitement ultérieur du signal (amplification, démodulation).
-    
-
----
 
 ## Réalisation du filtre de Vout
-
-### Montage et câblage
-
-- Le filtre RC a été câblé selon les valeurs théoriques :
-    
-    - **Condensateur de 100 nF**
-        
-    - **Résistance de 6,8 kΩ** à la masse
-        
-- Signal d’entrée : Vout du capteur.
-    
-- Mesures effectuées à l’aide d’un **GBF (générateur basse fréquence)** et d’un **oscilloscope**.
-    
-
----
 
 ### Tests et chronogrammes
 
@@ -503,7 +514,7 @@ Le montage permet de :
     
 - Signal de sortie Vs : réponse du filtre (Vs en jaune).
 	
-- ![[Pasted image 20250508102211.png]]
+- ![[filtrage ve.png]]
 
 On a testé trois cas :
 
@@ -535,11 +546,9 @@ On a testé trois cas :
 #### **Résultats observés :**
 
 - **Surface noire** : pas de signal modulé, donc Vs ≈ 0.
-	
-- ![[Pasted image 20250508102237.png]]
+	![[vout modulé surface noir.png]]
 - **Surface blanche** : modulation claire à 2 kHz visible sur Vs.
-	
--  ![[Pasted image 20250508102252.png]]
+	![[Vout modulé surface blanche.png]]
 
 Le filtre a bien supprimé le décalage continu et a laissé passer uniquement la modulation utile.
 
@@ -554,16 +563,12 @@ Le filtre RC mis en œuvre permet efficacement de :
 - Préparer le signal pour les étapes suivantes (amplification et démodulation).
     
 - Améliorer la lisibilité et la fiabilité du signal de suivi lumineux.
-    
-
-Cette étape est indispensable pour garantir un **traitement précis et robuste** du signal optique.
 
 # 4. Amplifier Vout filtrée :
 
 ### Objectif :
 
-L’objectif de cette séance est de concevoir un amplificateur pour le signal **Vout filtrée**, issu de la détection optique, afin d’en augmenter l’amplitude sans en altérer la forme, de manière à rendre ce signal exploitable pour l’étape suivante de démodulation.
-
+Cette séance vise à concevoir un amplificateur qui augmente l’amplitude du signal filtré sans en altérer la forme, pour préparer la démodulation.
 ### Analyse du besoin :
 
 - Le signal **Vout filtrée** correspond à une modulation d’amplitude liée à l’intensité lumineuse réfléchie par le sol (blanc ou noir).
@@ -575,7 +580,6 @@ L’objectif de cette séance est de concevoir un amplificateur pour le signal *
     - Pour une surface **noire**, Vout filtrée ≈ **0 V**
         
 - Le cahier des charges impose une **tension de sortie amplifiée d’environ 9 V** pour une surface blanche.
-    
 
 ### Choix de la solution :
 
@@ -602,35 +606,32 @@ Pour obtenir un gain de 6 (objectif : 1,5 V → 9 V) :
 
 ### Simulation :
 
-- Simulation réalisée sous **MicroCap**.
+-  ![[v out amplifié.png]]
     
 - Entrée : signal sinusoïdal de 1,5 V crête à 2 kHz.
     
 - Résultat : signal amplifié à 9 V crête, sans distorsion notable.
-    
-
----
 
 ## Réalisation pratique et tests expérimentaux
 
-### Objectif :
-
-Mettre en œuvre le montage d’amplification conçu précédemment sur une platine d’essai, le tester avec des signaux réels, et valider son comportement.
-
 ### Procédure :
 
-1. Réalisation du circuit sur plaque d’essai.
+1. Alimentation de l’AOP en ±12 V pour éviter toute saturation.
     
-2. Alimentation de l’AOP en ±12 V pour éviter toute saturation.
+2. Branchement de l’entrée du montage sur la sortie **Vout filtrée**.
     
-3. Branchement de l’entrée du montage sur la sortie **Vout filtrée**.
-    
-4. Observation des signaux à l’oscilloscope :
+3. Observation des signaux à l’oscilloscope :
     
     - Jaune : signal d’entrée (Vout filtrée)
         
     - Bleu : signal amplifié (Vout filtrée amplifiée)
         
+### Problème rencontré :
+
+- **Saturation négative** du signal en cas de petites variations négatives du signal d’entrée.
+    
+- Solution : insertion d’une **diode de redressement** en sortie de l’amplificateur pour éliminer la partie négative.
+    
 
 ### Résultats :
 
@@ -639,26 +640,18 @@ Mettre en œuvre le montage d’amplification conçu précédemment sur une plat
     - Entrée ≈ 1,5 V crête
         
     - Sortie ≈ 9 V crête (conforme au cahier des charges)
-        
+	![[fond blanc amplifier et non amplifier - Seance 4.jpg]]
 - **Surface noire** :
     
     - Entrée ≈ 0 V
         
     - Sortie ≈ 0 V
-        
-
-### Problème rencontré :
-
-- **Saturation négative** du signal en cas de petites variations négatives du signal d’entrée.
-    
-- Solution : insertion d’une **diode de redressement** en sortie de l’amplificateur pour éliminer la partie négative.
-    
-
+    ![[fond noir vout filitré, ampli et non ampli - seance 4.jpg]]
 ### Conclusion :
 
 Le montage est fonctionnel et conforme aux exigences. Le signal est propre, amplifié et prêt pour l’étape de **démodulation**.
 
-# Démoduler Vout filtrée et amplifié
+# 5. Démoduler Vout filtrée et amplifié
 
 ### Objectif :
 
@@ -669,7 +662,6 @@ Réaliser un montage de **démodulation d’enveloppe** afin d’extraire la val
 - Signal entrant (Vout filtrée amplifiée) : sinusoïdal à 2 kHz, amplitude ≈ 9 V crête (surface blanche), ≈ 0 V (surface noire).
     
 - But : obtenir une tension continue (ou lentement variable) qui suit les crêtes positives du signal.
-    
 
 ### Choix de la solution :
 
@@ -680,7 +672,7 @@ Un **détecteur de crête** est utilisé, composé de :
 - Un **condensateur** pour stocker la tension maximale.
     
 - Une **résistance** pour assurer la décharge progressive du condensateur (temps de réponse).
-    
+![[Detecteur crête.png]]
 
 ### Calculs :
 
@@ -690,9 +682,9 @@ Un **détecteur de crête** est utilisé, composé de :
     
 - Choix de :
     
-    - C=100 nF
+    - C6=100 nF
         
-    - $R=τC=5×10−3100×10−9=50 kΩ$
+    - $R7=τC=5×10−3100×10−9=50 kΩ$
         
 
 ### Simulation :
@@ -702,28 +694,20 @@ Un **détecteur de crête** est utilisé, composé de :
 - Signal en entrée : onde sinusoïdale à 2 kHz.
     
 - Résultat attendu : signal de sortie continue ≈ 9 V pour le signal modulé à 9 V crête.
-    
-
----
-
+	
+- Ve en jaune et Vout démodulé en bleu.
+	![[ve et vs seance5.jpg]]
 ## Réalisation du montage de démodulation et validation:
-
-### Objectif :
-
-Implémenter le montage détecteur de crête sur plaque d’expérimentation et valider sa capacité à générer Vsuivi à partir de Vout filtrée amplifiée.
 
 ### Étapes :
 
-1. Câblage du montage détecteur de crête.
+1. Connexion de l’entrée à la sortie de l’amplificateur de la séance précédente.
     
-2. Connexion de l’entrée à la sortie de l’amplificateur de la séance précédente.
-    
-3. Mesures à l’oscilloscope :
+2. Mesures à l’oscilloscope :
     
     - Entrée : Vout filtrée amplifiée
         
     - Sortie : Vsuivi (tension démodulée)
-        
 
 ### Observations :
 
@@ -732,24 +716,21 @@ Implémenter le montage détecteur de crête sur plaque d’expérimentation et 
     - Entrée : ≈ 9 V crête
         
     - Vsuivi : ≈ 9 V (tension stable)
-        
+    ![[surface blanche- seance 6.jpg]]
 - **Surface noire** :
     
     - Entrée : ≈ 0 V
         
     - Vsuivi : ≈ 0 V (tension quasi nulle)
-        
+    ![[surface noir - séance 6.jpg]]
 - Comportement du montage conforme aux attentes.
-    
-- Aucun effet de ripple significatif, la constante de temps choisie est bien adaptée.
-    
 
 ### Conclusion :
 
 Le démodulateur fonctionne parfaitement. Il convertit efficacement le signal sinusoïdal amplifié en une tension continue proportionnelle à l’intensité lumineuse perçue. Cette tension (Vsuivi) pourra ensuite être utilisée pour allumer des LED ou piloter des moteurs.
 
 
-# Visualiser :
+# 6. Visualiser :
 
 ### Objectif :
 
@@ -777,31 +758,22 @@ L’objectif est de commander une **diode électroluminescente (LED)** à partir
 
 - Tension seuil choisie : **Vref = 3 V**
     
-- Si Vsuivi>VrefVsuivi > VrefVsuivi>Vref, alors la LED s’allume (surface blanche détectée).
+- Si Vsuivi>Vref, alors la LED s’allume (surface blanche détectée).
     
 - Si Vsuivi<Vref, la LED reste éteinte (surface noire détectée).
     
 - Résistance série pour la LED 
 	$R_{LED}=V_{suivi}−V_{D}*I_{LED}=6V−2V*20mA=200 Ω$(valeur normalise E12 : 220 Ω) où $V_D$​ est la chute de tension dans la LED rouge ≈ 2V).
 
-### Adaptation d’impédance :
-
-Le comparateur est conçu pour présenter une **impédance d’entrée élevée** et **ne pas charger le signal Vsuivi**, afin de préserver l'intégrité du signal issu du détecteur de crête.
-
 ### Simulation :
 
 - Simulation effectuée dans **MicroCap** ou environnement similaire.
     
 - Résultat attendu : la sortie bascule rapidement en fonction du dépassement du seuil Vref, et commande proprement l’allumage de la LED.
-    
-
----
+	
+- ![[Led.png]]
 
 ## Implémentation du montage et validation expérimentale
-
-### Objectif :
-
-Réaliser physiquement le circuit de visualisation sur plaque d’essai, le tester avec des signaux réels et vérifier le bon fonctionnement de la LED en fonction de la valeur de **Vsuivi**.
 
 ### Montage réalisé :
 
