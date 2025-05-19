@@ -31,7 +31,7 @@
         
 - **Trajet du courant** : Surligné en rouge sur le schéma pour visualiser le chemin de l’émission lumineuse.
     
-![[Routage, chemin du courant entre les deux capteurs.jpg]]
+![[Routage, chemin du courant entre les deux capteurs - Seance 1.jpg]]
 ### Fonctionnement du montage transistor
 
 - Choix du montage : **Montage collecteur commun** pour obtenir une **tension Vout** qui augmente avec l’intensité lumineuse reçue.
@@ -58,18 +58,18 @@
 - **Valeur normalisée** utilisée : **150 Ω**.
 	
 - Schéma lorsque le capteur est sur du blanc :
-	![[Sortie module avec lumière.png]]
+	![[Sortie module avec lumière - seance 1.png]]
 	On constate que la sortie ne dépasse pas les 9V
 - Schéma lorsque le capteur est entre le blanc et le noir :
-	![[sortie module avec lumière entre blanc et noir.png]]
+	![[sortie module avec lumière entre blanc et noir - seance 1.png]]
 	La sortie est bien à 4,5V.
 ## Résultats attendu :
 - Lorsque la lumière est très forte (10) :
-	![[Lumière a 10.png]]
+	![[Lumière a 10 - seance 1.png]]
 - Lorsque la lumière est moyenne (5) :
-	![[lumière à 5.png]]
+	![[lumière à 5 - seance 1.png]]
 - Lorsque la lumière est très faible (1) :
-	![[lumière à 1.png]]
+	![[lumière à 1 - seance 1.png]]
 ### Conclusion de l'étude théorique
 
 Grâce à cette étude, la conception de la carte "yeux" permet d’assurer :

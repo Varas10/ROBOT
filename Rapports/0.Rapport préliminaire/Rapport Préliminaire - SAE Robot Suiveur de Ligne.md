@@ -19,7 +19,7 @@ Ensuite, de la **lumière** *reflèteras sur la piste* ainsi que des *lumières 
 
 ## Spécifications fonctionnelles
 
-Il doit **réagir aux claquements de mains**. Cependant, des **sons parasites**, résonnés par les murs de la pièce par exemple, peuvent interférer avec le robot.
+Il doit **réagir aux claquements de mains**. Cependant, des **sons parasites**, résonné par les murs de la pièce par exemple, peuvent interférer avec le robot.
 
 De plus, il doit **indiquer sont état** (veille / allumé) avec *une LED*
 
@@ -67,10 +67,10 @@ Si le **capteur gauche** ne détecte *plus de lumière* et que le **capteur droi
 
 ## Ordre 1
 
-![[schéma ordre 1.png]]
+![[schéma ordre 1 - seance 0.png]]
 ## Ordre 2
 
-![[schéma ordre 2.png]]
+![[schéma ordre 2 -  seance 0.png]]
 
 ## F1 : Détection du claquement de mains
 
