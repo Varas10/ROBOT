@@ -7,7 +7,7 @@ Shape Version=11.00
 Screen=1920,1080
 MCAPVersion=12.2.0.3
 Key ID=Demo
-NLCnt=139
+NLCnt=141
 TXCnt=18
 
 [shapedef]
@@ -158,6 +158,24 @@ Line=-2,0,2,0
 Line=0,-2,0,2
 
 [shapedef]
+Name=Pot
+Line=0,0,12,0
+Line=12,0,14,-4
+Line=14,-4,18,4
+Line=18,4,22,-4
+Line=22,-4,26,4
+Line=26,4,30,-4
+Line=30,-4,34,4
+Line=34,4,36,0
+Line=36,0,48,0
+PolyClosed=4
+PolyLine=24,4
+PolyLine=24,4
+PolyLine=22,8
+PolyLine=26,8
+Line=24,8,24,16
+
+[shapedef]
 Name=Resistor
 PolyOpen=12
 PolyLine=0,0
@@ -240,7 +258,7 @@ Name=Capacitor
 Definition=Capacitor
 Shape=Capacitor
 Mask=7425
-Used=23
+Used=24
 memo=Capacitor
 Label Offset=16,12,12,12
 PinCnt=2
@@ -339,6 +357,19 @@ Pin="OUT",d,12,4,-39,7
 Pin="CONT",a,8,-1,5,17
 Pin="VCC",a,4,-1,5,17
 Pin="GND",a,5,13,3,-3
+
+[compdef]
+Name=Pot
+Definition=Macro
+Shape=Pot
+Mask=4608
+Used=2
+memo=Potentiometer Macro
+Label Offset=32,4,9,11
+PinCnt=3
+Pin="PINA",a,0,0,-13,-5
+Pin="PINB",a,3,2,6,5
+Pin="PINC",a,6,0,-12,-5
 
 [Circuit]
 Window Placement=0,3, -1,-1, -4,-30, 0,0,801,274
@@ -2475,17 +2506,17 @@ V
 Pxs=568,504,632,504
 
 [Wire]
-Pxs=568,584,568,672
+Pxs=568,584,568,704
 
 [Wire]
 Pxs=600,400,600,432
 
 [Wire]
-Pxs=632,672,848,672
+Pxs=632,704,848,704
 
 [Comp]
 Name=Ground
-Px=632,672
+Px=632,704
 Rot=7
 
 [Comp]
@@ -2511,7 +2542,7 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=632,568,632,672
+Pxs=632,568,632,704
 
 [Wire]
 Pxs=816,536,848,536
@@ -2616,7 +2647,7 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=848,584,848,672
+Pxs=848,584,848,704
 
 [Comp]
 Name=Capacitor
@@ -2681,10 +2712,10 @@ Color=#C0C0C0
 Pxs=880,584,896,584
 
 [Wire]
-Pxs=896,632,896,672
+Pxs=896,632,896,656
 
 [Wire]
-Pxs=848,672,880,672
+Pxs=848,704,880,704
 
 [Wire]
 Pxs=896,432,896,536
@@ -2716,7 +2747,7 @@ V
 
 [Comp]
 Name=Ground
-Px=880,672
+Px=880,704
 Rot=7
 
 [Comp]
@@ -2787,7 +2818,7 @@ V
 Object=FC_Process
 CBorder=#000000
 Pattern=Dot6
-Px=488,280,760,744
+Px=488,312,760,776
 GridSnap=True
 
 [Wire]
@@ -2797,7 +2828,7 @@ Pxs=600,432,848,432
 Object=FC_Process
 CBorder=#000000
 Pattern=Dot6
-Px=800,280,1040,744
+Px=800,312,1040,776
 GridSnap=True
 
 [Object]
@@ -2822,7 +2853,7 @@ Px=1472,280,1744,744
 GridSnap=True
 
 [Wire]
-Pxs=568,672,632,672
+Pxs=568,704,632,704
 
 [Wire]
 Pxs=568,464,568,504
@@ -2846,7 +2877,7 @@ Pxs=848,432,848,448
 Pxs=880,632,896,632
 
 [Wire]
-Pxs=880,672,896,672
+Pxs=880,704,920,704
 
 [Wire]
 Pxs=816,584,848,584
@@ -3420,6 +3451,35 @@ Pxs=280,368,280,384
 [Wire]
 Pxs=256,424,256,456
 
+[Comp]
+Name=Pot
+Px=920,672
+Rot=2
+
+[Attr]
+ON=-47,-20,PART
+V=X6
+Style=8192
+
+[Attr]
+ON=-49,-36,FILE
+V=Pot
+
+[Attr]
+ON=-53,-68,Param:POTSIZE
+V=10K
+
+[Attr]
+ON=-44,-84,Param:PERCENT
+V=50
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Wire]
+Pxs=920,672,920,704
+
 [Grid Text]
 Text="Oscillateur"
 Px=224,320
@@ -3784,9 +3844,9 @@ PrinterScale=1.0021261149139185
 Scale 0=1
 Scale 1=1
 Scale 2=1
-SB 3=0,253
+SB 3=530,349
 Scale 3=0.66666666666666663
-Px=393,446
+Px=917,716
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
