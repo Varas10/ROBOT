@@ -1,0 +1,25 @@
+{
+	"nodes":[
+		{"id":"6641865035d93117","type":"group","x":-225,"y":-175,"width":1325,"height":475,"label":"carte suiveurs "},
+		{"id":"d0dd6bc188f05017","type":"text","text":"F1 - Recevoir la lumière ","x":-160,"y":0,"width":200,"height":103},
+		{"id":"ca150b0538c1ef79","type":"text","text":"F3 - Filtrer la lumière ambiante ","x":120,"y":10,"width":250,"height":83},
+		{"id":"3baca8e255054904","type":"text","text":"F4 - Amplifier le signal","x":420,"y":8,"width":250,"height":86},
+		{"id":"eab7326a4ee9f8fe","type":"text","text":"F5 - Démodulé le signal","x":720,"y":6,"width":232,"height":90},
+		{"id":"c56a103c7f7cae41","type":"text","text":"F6 - Visualiser l'état du signal","x":722,"y":160,"width":229,"height":95},
+		{"id":"bca80c067c2e29a4","x":1220,"y":6,"width":191,"height":87,"type":"text","text":"Carte moteur 🏍️"},
+		{"id":"e58f014f66be5b01","x":1220,"y":158,"width":229,"height":100,"type":"text","text":"Signal lumineux 💡"},
+		{"id":"e567cd1a5b3f8f24","x":1222,"y":-144,"width":226,"height":95,"type":"text","text":"Led IR de la carte yeux 👀"},
+		{"id":"4442741c65e2e63a","x":-540,"y":10,"width":231,"height":83,"type":"text","text":"Capteur IR de la carte yeux 👀"},
+		{"id":"e5bf83ea01cb6d7e","type":"text","text":"F2 - Coder la lumière 🔦 ","x":300,"y":-139,"width":200,"height":86}
+	],
+	"edges":[
+		{"id":"1a6f32d485d459cf","fromNode":"d0dd6bc188f05017","fromSide":"right","toNode":"ca150b0538c1ef79","toSide":"left"},
+		{"id":"889b3f7076ee7209","fromNode":"ca150b0538c1ef79","fromSide":"right","toNode":"3baca8e255054904","toSide":"left"},
+		{"id":"ee1f3daa99bebb03","fromNode":"3baca8e255054904","fromSide":"right","toNode":"eab7326a4ee9f8fe","toSide":"left"},
+		{"id":"9890ef414fc6f6c5","fromNode":"eab7326a4ee9f8fe","fromSide":"bottom","toNode":"c56a103c7f7cae41","toSide":"top"},
+		{"id":"2884dba0f41e4ab6","fromNode":"eab7326a4ee9f8fe","fromSide":"right","toNode":"bca80c067c2e29a4","toSide":"left"},
+		{"id":"44d4621be620f079","fromNode":"c56a103c7f7cae41","fromSide":"right","toNode":"e58f014f66be5b01","toSide":"left"},
+		{"id":"77d6709a1e6c437e","fromNode":"e5bf83ea01cb6d7e","fromSide":"right","toNode":"e567cd1a5b3f8f24","toSide":"left"},
+		{"id":"29f53deb75299fdd","fromNode":"4442741c65e2e63a","fromSide":"right","toNode":"d0dd6bc188f05017","toSide":"left"}
+	]
+}
