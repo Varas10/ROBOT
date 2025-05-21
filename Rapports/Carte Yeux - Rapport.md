@@ -369,7 +369,7 @@ $f=\frac{1.44}{(R1+2R2)×C}$
 
 En choisissant :
 - $R9=R8=33kΩ$
-- $C7=1nF$
+- $C7=1nF$.
 
 On obtient une fréquence de **2 kHz**, conforme aux spécifications du projet.
 
