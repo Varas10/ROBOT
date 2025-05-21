@@ -209,7 +209,7 @@ Le robot doit :
 - Nécessité d’un **découplage avec condensateurs 100µF** pour **chaque partie**
 
 # 1. Émettre et Recevoir de la lumière
-## Étude théorique
+## **Étude théorique**
 
 ### Présentation du capteur CNY70
 
@@ -245,14 +245,17 @@ Le robot doit :
 	
 - Calculs :
     
-    - **Re** :$Re=9V−0V*0,001A=9000 Ω$
+    - **Re** :$Re=\frac{V_{cc}-V_{ce}}{I_{c}}=\frac{9V−0V}{0,001A}=9000 Ω$
     - **Vce** pour 50mA d’émission : ≈ 0,3V.
     - **Vout** correspondant : $Vout=9V−0,3V=8,7V$
 
 ### Limitation du courant LED
 
-- Calcul de la résistance RD pour limiter le courant LED à 50 mA sous 9V :
-    $RD=9V−1,25V0,05A=155 Ω$ (150$\ohm$ en valeur normalisée E12)
+- On fait donc varier RE pour ne pas dépassé $I_c=2mA$ 
+	Avec $I_{C_{max}}$: $R_{E}=\frac{Vcc-V_{CE}}{I_{C}}=\frac{9-0.1}{0.002}=4,450k\ohm$
+	Avec $I_{C_{tres petit}}:RE=\frac{9-0.1}{0,00001}=89k\ohm$
+- Calcul de la résistance RLed pour limiter le courant LED à 50 mA sous 9V :
+    $RLed=\frac{Vcc-V_{D}}{I_{D}}=\frac{9−1,25}{0.05}=155 Ω$ (150$\ohm$ en valeur normalisée E12)
 	
 - Schéma lorsque le capteur est sur du blanc :
 	![[Sortie module avec lumière - seance 1.png]]
@@ -269,17 +272,8 @@ Le robot doit :
 	![[lumière à 5 - seance 1.png]]
 - Lorsque la lumière est très faible (1) :
 	![[lumière à 1 - seance 1.png]]
-### Conclusion de l'étude théorique
 
-Grâce à cette étude, la conception de la carte "yeux" permet d’assurer :
-
-- La bonne émission de lumière infrarouge.
-- La détection fiable des surfaces via un phototransistor.
-- La protection des composants par le choix adapté des résistances.
-
----
-
-## Étude pratique
+## **Étude pratique**
 
 ### Câblage de la carte
 
@@ -290,7 +284,7 @@ Grâce à cette étude, la conception de la carte "yeux" permet d’assurer :
 ### Mesures réalisées
 
 - **Mesure du courant LED** :
-    $I_{LED} = \frac{5,37V}{150\,\Omega} = 35\, mA$
+    $I_{LED} =\frac{Vled}{Rled} \frac{5,37V}{150\,\Omega} = 35\, mA$
 
 - **Mesures de Vout** :
     - **Surface blanche** : 0,1 V.
@@ -316,16 +310,20 @@ Grâce à cette étude, la conception de la carte "yeux" permet d’assurer :
 - Lorsque la surface est noire, Vout est quasiment nul, ce qui permet une détection fiable du changement de surface.
     
 
-### Conclusion de l'étude pratique
+### Conclusion 
+
+Grâce à cette étude, la conception de la carte "yeux" permet d’assurer :
+
+- La bonne émission de lumière infrarouge.
+- La détection fiable des surfaces via un phototransistor.
+- La protection des composants par le choix adapté des résistances.
 
 L'étude pratique a permis de :
 
 - Vérifier le fonctionnement du montage théorique.
-    
 - Valider la modulation comme méthode efficace pour rejeter les interférences lumineuses.
-    
 - S'assurer que le robot pourra différencier correctement les pistes claires et sombres lors de son suivi de ligne.
-
+---
 # 2. Génération d’un signal de lumière codée
 ## Analyse Théorique :
 
@@ -335,36 +333,28 @@ Le but de ce projet est de concevoir un système analogique permettant d’émet
 
 ### **Principe du codage lumineux**
 
-L’information est transmise sous forme de signal **binaire** en utilisant une LED infrarouge :
+L’information est envoyée sous forme binaire avec une LED infrarouge :
 
-- **Bit à 1** → La LED est allumée.
+- **1** → La LED s’allume
     
-- **Bit à 0** → La LED est éteinte.
-    
+- **0** → La LED s’éteint
 
-Ce codage temporel permet au récepteur de distinguer clairement les transitions entre les états ON et OFF, garantissant ainsi une détection précise.
-
-Le signal doit être **modulé en fréquence** afin d’être facilement différentiable des sources lumineuses ambiantes (soleil, lampes, etc.). Une fréquence de **2 kHz** a été choisie pour l’émission, ce qui signifie que la LED clignote à cette fréquence pour représenter un bit.
+Pour éviter les interférences avec la lumière ambiante (comme le soleil ou les lampes), le signal est **modulé** : la LED clignote à une fréquence de **2 kHz** pour chaque bit transmis. Cela permet au récepteur de mieux reconnaître le signal.
 
 ### Technique :
 
 L’émission du signal lumineux est réalisée grâce à un circuit analogique composé de :
 
 - Un **oscillateur** avec un **NE555** permettant de générer un signal carré périodique.
-    
 - Une **LED infrarouge** qui émet la lumière selon le signal de l’oscillateur.
-    
 - Une **résistance de limitation de courant** pour protéger la LED et assurer un fonctionnement stable.
 
 
 Le **circuit oscillateur** est conçu de manière à produire un signal carré ayant :
 
 - Une **tension de sortie oscillante entre 0V et 9V** (valeurs définies par l’alimentation du circuit).
-    
 - Un **rapport cyclique de 50 %**, garantissant un temps d’allumage et d’extinction égaux.
-    
 - Une **fréquence de 2 kHz**, assurant une bonne séparation entre les impulsions.
-    
 
 ### **Schéma fonctionnel**
 
@@ -375,21 +365,15 @@ Le montage peut être représenté par le schéma fonctionnel suivant :
 ### **Calculs des composants**
 
 La fréquence d’oscillation d’un NE555 en mode astable est donnée par la formule :
-
-$f=1.44(R1+2R2)×C$
-$f = \frac{1.44}{(R1 + 2R2) \times C}f=(R1+2R2)×C=1.44​kHz$
+$f=\frac{1.44}{(R1+2R2)×C}$
 
 En choisissant :
 - $R9=R8=33kΩ$
-    
-- $C7=1nF$
+- $C7=1nF$.
 
 On obtient une fréquence de **2 kHz**, conforme aux spécifications du projet.
 
-### **Conclusion du projet**
-
-Ce projet a abouti à la création d’un émetteur optique analogique, sans microcontrôleur, utilisant un oscillateur autonome pour un fonctionnement stable. La modulation à 2 kHz facilite la détection par le récepteur tout en réduisant les interférences lumineuses.
-## Réalisation pratique de l’émetteur
+## **Réalisation pratique**
 
 ### Mesures et observations
 
@@ -404,13 +388,11 @@ Le signal en sortie du circuit oscillateur a été mesuré à l’aide d’un os
 
 #### 2. Observation du fonctionnement de la LED
 
-- Avec un téléphone, la LED infrarouge semble allumée en continu, car la fréquence de 2 kHz est trop rapide pour être perçue.
-    
 - Avec l'oscilloscope, on observe que la LED clignote bien à la fréquence attendue.
 
 ### Tests et validation du fonctionnement
 
-Des tests ont été effectués en utilisant un **récepteur optique** pour vérifier la bonne transmission du signal :
+Des tests ont été effectués en utilisant un oscilloscope branché a la sortie des capteurs pour vérifier la bonne transmission du signal :
 
 - Le **capteur infrarouge (phototransistor)** détecte bien les impulsions lumineuses émises.
     
@@ -430,17 +412,13 @@ Des tests ont été effectués en utilisant un **récepteur optique** pour véri
 2. **Signal lumineux détecté par la photodiode** :
     
     - Même fréquence de 2 kHz.
-        
     - Amplitude variable en fonction de la distance et de l’alignement du capteur.
-	    
-    - Fond blanc :
-     ![[fond blanc seance 2.jpg]]
-	- Fond noir :
-	![[fond noir seance 2.jpg]]
+    - Fond blanc :![[fond blanc seance 2.jpg]]
+	- Fond noir :![[fond noir seance 2.jpg]]
+	
 ### Difficultés rencontrées et solutions apportées
 
 - **Problème :** LED infrarouge trop faible dans certains cas.
-    
     - **Solution :** Augmentation du courant en ajustant la résistance de limitation (passage de 150Ω à 100Ω).
 
 ### Conclusion de la séance
@@ -763,7 +741,7 @@ L’objectif est de commander une **diode électroluminescente (LED)** à partir
 - Si Vsuivi<Vref, la LED reste éteinte (surface noire détectée).
     
 - Résistance série pour la LED 
-	$R_{LED}=V_{suivi}−V_{D}*I_{LED}=6V−2V*20mA=200 Ω$(valeur normalise E12 : 220 Ω) où $V_D$​ est la chute de tension dans la LED rouge ≈ 2V).
+	$R_{LED} = V_{suivi} − V_{D}*I_{LED}=6V−2V*20mA=200 \Omega$ (valeur normalise E12 : 220 Ω) où $V_D$​ est la chute de tension dans la LED rouge ≈ 2V).
 
 ### Simulation :
 
