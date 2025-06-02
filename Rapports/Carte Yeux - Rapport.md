@@ -14,6 +14,7 @@ Le robot sera en **intérieur**.
 Des **sons** tels que les *claquements de mains* et des *sons parasites* vont réagir avec le robot
 Ensuite, de la **lumière** *reflèteras sur la piste* ainsi que des *lumières parasites*
 
+---
 ### Fonction principale
 
 Le robot doit :
@@ -26,7 +27,6 @@ Le robot doit :
 - Être **alimenté uniquement par piles**.
 
 ---
-
 ### Spécifications Fonctionnelles
 
 - Réagit **aux claquements de mains**, tout en filtrant les **sons parasites** (bruits d’ambiance ou réverbération).
@@ -40,7 +40,6 @@ Le robot doit :
 - Intégration de filtres et d’amplification pour éviter les **interférences lumineuses extérieures**.
 
 ---
-
 ### Spécifications Opérationnell
 
 - Le robot suit une **ligne blanche sinueuse**, même en cas de **virages ou interruptions temporaires**.
@@ -58,7 +57,6 @@ Le robot doit :
 - Par défaut, le robot est en **mode veille**
 
 ---
-
 ### Spécifications Technologiques
 
 - Technologie : **électronique analogique uniquement**.
@@ -75,7 +73,6 @@ Le robot doit :
     - **Support de piles** intégré.
 
 ---
-
 ### Fonctionnement général
 
 - Deux capteurs **infrarouges CNY70** situés à l’avant détectent la **réflexion de lumière** sur la ligne blanche.
@@ -106,8 +103,6 @@ Le robot doit :
 - **Signal de sortie** :
     - **9V** = robot **à l’arrêt**
     - **0V** = robot **en marche**
-
----
 
 ### F2 : Suivi de piste (capteurs IR)
 
@@ -154,16 +149,7 @@ Le robot doit :
 # 1. Émettre et Recevoir de la lumière
 ## **Étude théorique**
 
-### Présentation du capteur CNY70
-
 - **Type de lumière émise** : Infrarouge (λ = 950 nm).
-
-- **Spectre** : Non visible à l'œil nu.
-
-- **Constitution** du capteur :
-    - **Diode émettrice** : Cathode et anode identifiées sur le schéma.
-    - **Phototransistor récepteur** : Collecteur (C) et émetteur (E) également identifiés.
-
 ### Schéma de routage
 
 - Le schéma fourni montre la carte "yeux" avec :
@@ -174,7 +160,7 @@ Le robot doit :
     - **Alimentation** : 9V.
     - **Masse**.
 
-- **Trajet du courant** : Surligné en rouge sur le schéma pour visualiser le chemin de l’émission lumineuse.
+- **Trajet du courant** : en noir sur le schéma pour visualiser le chemin de l’émission lumineuse.
     
 	![[Routage, chemin du courant entre les deux capteurs - Seance 1.jpg]]
 ### Fonctionnement du montage transistor
@@ -191,7 +177,7 @@ Le robot doit :
 ### Limitation du courant LED
 
 - On fait donc varier RE pour ne pas dépassé $I_c=2mA$ 
-	Avec $I_{C_{max}}$: $R_{E}=\frac{Vcc-V_{CE}}{I_{C}}=\frac{9-0.1}{0.002}=4,450k\ohm$
+	Avec $I_{C_{max}}$ : $R_{E}=\frac{Vcc-V_{CE}}{I_{C}}=\frac{9-0.1}{0.002}=4,450k\ohm$
 	Avec $I_{C_{tres petit}}:RE=\frac{9-0.1}{0,00001}=89k\ohm$
 
 - Calcul de la résistance RLed pour limiter le courant LED à 50 mA sous 9V :
@@ -224,9 +210,9 @@ Le robot doit :
 ### Mesures réalisées
 
 - **Mesure du courant LED** :
-    $I_{LED} =\frac{Vled}{Rled} \frac{5,37V}{150\,\Omega} = 35\, mA$
+    $I_{LED} =\frac{Vled}{Rled}= \frac{5,37V}{150\,\Omega} = 35\, mA$
 
-- **Mesures de Vout** :
+- **Mesures de $V_{signalcarré_{capté}}$** :
     - **Surface blanche** : 9 V.
     - **Surface noire** : 0 V.
 
@@ -236,7 +222,7 @@ Le robot doit :
     - **Signal carré** appliqué : 0-9V, fréquence = 2kHz.
 
 - Relevés :
-    - Signal codé généré pour la lumière (en bleu) et signal de sortie en jaune:
+    - Signal codé généré par l'oscillateur (en bleu) et signal reçu par le capteur:
 		- Surface blanche :
 		![[fond blanc seance 2.jpg]]
 		
@@ -244,8 +230,8 @@ Le robot doit :
 		![[fond noir seance 2.jpg]]
 ### Résultats observés
 
-- Lorsque la surface est blanche, Vout présente une réponse claire et modulée.
-- Lorsque la surface est noire, Vout est quasiment nul, ce qui permet une détection fiable du changement de surface.
+- Lorsque la surface est blanche, $V_{signalcarré_{capté}}$ présente une réponse claire et modulée.
+- Lorsque la surface est noire, $V_{signalcarré_{capté}}$ est quasiment nul, ce qui permet une détection fiable du changement de surface.
 
 ### Conclusion 
 
@@ -297,7 +283,7 @@ Le **circuit oscillateur** est conçu de manière à produire un signal carré a
 
 Le montage peut être représenté par le schéma fonctionnel suivant :
 
-![[Pasted image 20250519182410.png]]
+
 
 ### **Calculs des composants**
 
@@ -598,12 +584,13 @@ L’objectif est de commander une **diode électroluminescente (LED)** à partir
 - Si Vsuivi<Vref, la LED reste éteinte (surface noire détectée).
 
 - Résistance série pour la LED 
-	$R_{1}=\frac{V_{suivi}-V_{BE}}{\frac{I_{B}}{\beta}}=(6-)$où $V_D$​ est la chute de tension dans la LED rouge ≈ 2V).
+	$R_{1}=\frac{V_{suivi}-V_{BE}}{\frac{I_{B}}{\beta}}=\frac{6-0.6}{\frac{0.02}{75}}$
+	$R_{2}=\frac{V_{alim}-V_{D_{4}}-V_{CE_{sat}}}{I_{D}}=\frac{9-1,9-0,3}{0,02}=22k\ohm$ ; où $V_D$​ est la chute de tension dans la LED rouge ≈ 1,9V).
 
 ### Simulation :
 
 - Résultat attendu : la sortie bascule rapidement en fonction du dépassement du seuil Vref, et commande proprement l’allumage de la LED.
-- ![[Led.png]]
+![[Led.png]]
 
 ## Etude pratique
 
