@@ -372,7 +372,7 @@ On utilise un **filtre passe-haut** (filtre RC) pour supprimer la composante con
 
 La **fréquence de coupure Fc** du filtre est choisie telle que :
 
-$Fc = \frac{1}{2 \pi R C}=20Hz$
+- $Fc = \frac{1}{2 \pi R C}=20Hz$
 
 Objectif : que **$Flum = 2 kHz$** soit **dans la bande passante**, donc $Fc < Flum$. On choisit :
 
@@ -381,7 +381,7 @@ Objectif : que **$Flum = 2 kHz$** soit **dans la bande passante**, donc $Fc < Fl
 #### Choix des composants :
 
 - **C = 100 nF** et **Fc = 200Hz**
-- **$R =\frac{1}{2π × C × Fc} = \frac{1}{2π × 100 nF × 200 Hz} ≈ 7957 Ω$, (valeur normalisé E12 = 6,8k$\ohm$)
+- $R =\frac{1}{2π × C × Fc} = \frac{1}{2π × 100 nF × 200 Hz} ≈ 7957 Ω$, **(valeur normalisé E12 = 6,8k$\ohm$)**
 
 Ce filtre permet d’atténuer fortement les composantes inférieures à 200 Hz (dont le continu), tout en laissant passer efficacement la modulation de 2 kHz.
 
