@@ -366,7 +366,7 @@ On utilise un **filtre passe-haut** (filtre RC) pour supprimer la composante con
 
 #### Schéma de principe :
 
-![[filtre marqueur.png]]![[
+![[filtre marqueur.png]]
 
 #### Calcul de la fréquence de coupure
 
@@ -611,4 +611,7 @@ L’objectif est de commander une **diode électroluminescente (LED)** à partir
 
 ### Conclusion :
 
-Le circuit de visualisation est opérationnel et conforme aux exigences. Il permet de **traduire visuellement l’état du capteur IR** après amplification et démodulation, ce qui est essentiel pour la vérification manuelle ou le débogage du système. Ce montage constitue la dernière étape de la chaîne de traitement du signal sur la carte SUIVI.****
+Le circuit de visualisation est opérationnel et conforme aux exigences. Il permet de **traduire visuellement l’état du capteur IR** après amplification et démodulation, ce qui est essentiel pour la vérification manuelle ou le débogage du système. Ce montage constitue la dernière étape de la chaîne de traitement du signal sur la carte SUIVI.
+
+# Schéma électronique
+![[Schéma globale.png]]

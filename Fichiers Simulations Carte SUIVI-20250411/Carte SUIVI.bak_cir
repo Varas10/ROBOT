@@ -713,7 +713,7 @@ Pxs=872,704,904,704
 Pxs=920,432,920,536
 
 [Wire]
-Pxs=920,584,968,584
+Pxs=920,584,1016,584
 
 [Comp]
 Name=Resistor
@@ -804,9 +804,6 @@ Pxs=904,704,944,704
 
 [Wire]
 Pxs=840,584,872,584
-
-[Wire]
-Pxs=968,584,1184,584
 
 [Wire]
 Pxs=296,432,416,432
@@ -1008,7 +1005,7 @@ Pxs=1504,432,1504,584
 Pxs=1504,432,1584,432
 
 [Wire]
-Pxs=1256,584,1344,584
+Pxs=1256,584,1384,584
 
 [Wire]
 Pxs=1560,480,1584,480
@@ -1493,9 +1490,6 @@ Pxs=2320,344,2320,352
 Pxs=2264,344,2320,344
 
 [Wire]
-Pxs=1344,584,1504,584
-
-[Wire]
 Pxs=1504,584,1504,592
 
 [Wire]
@@ -1520,6 +1514,12 @@ Pxs=1672,456,1832,456
 
 [Wire]
 Pxs=1184,584,1208,584
+
+[Wire]
+Pxs=1016,584,1184,584
+
+[Wire]
+Pxs=1384,584,1504,584
 
 [Grid Text]
 Text="Signal modulé"
@@ -1575,7 +1575,7 @@ CBorder=None
 
 [Grid Text]
 Text="V_sortie_capteur"
-Px=968,584
+Px=1016,584
 Angle=19
 GridSnap=True
 JustifyH=Left
@@ -1707,7 +1707,7 @@ CBorder=None
 
 [Grid Text]
 Text="V_sortie_filtre"
-Px=1344,584
+Px=1384,584
 Angle=38
 GridSnap=True
 JustifyH=Left
@@ -1764,7 +1764,7 @@ CurrentSection 3=0
 Splitter.xs=0
 Splitter.ys=0
 TextQuad=4099
-Scale=2.6666666666666665
+Scale=1
 GridUser=10
 ShapeGroups="Main","Euro","Polarity","Main1","Main11","Electrolytic","GroundArrow","DeMorgan"
 CalcRMS=False
@@ -1953,8 +1953,9 @@ PrinterScale=1.0021261149139185
 Scale 0=1
 Scale 1=1
 Scale 2=1
-Scale 3=2.6666666666666665
-Px=2309,1043
+SB 3=1336,185
+Scale 3=1
+Px=2132,783
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
