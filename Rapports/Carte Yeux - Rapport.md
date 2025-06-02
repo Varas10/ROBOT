@@ -613,5 +613,21 @@ L’objectif est de commander une **diode électroluminescente (LED)** à partir
 
 Le circuit de visualisation est opérationnel et conforme aux exigences. Il permet de **traduire visuellement l’état du capteur IR** après amplification et démodulation, ce qui est essentiel pour la vérification manuelle ou le débogage du système. Ce montage constitue la dernière étape de la chaîne de traitement du signal sur la carte SUIVI.
 
+---
+# Conclusion générale
+
+Ce projet a permis de concevoir et de réaliser avec succès un robot suiveur de ligne autonome, répondant à un cahier des charges précis en utilisant exclusivement de l’électronique analogique. Grâce à l’étude et à la mise en œuvre rigoureuse de chaque sous-système — détection infrarouge, génération et modulation du signal lumineux, filtrage, amplification, démodulation, et visualisation — le robot est capable de :
+
+- Démarrer et s’arrêter par simple claquement de mains ;
+
+- Suivre une ligne blanche sur fond noir de manière autonome ;
+
+- Adapter son comportement en fonction de la trajectoire détectée ;
+
+- Signaler visuellement son état de fonctionnement.
+
+L’utilisation de signaux modulés à 2 kHz et de filtres adaptés a permis de réduire efficacement l’influence des lumières parasites, assurant une détection fiable du contraste sol/piste. L'ensemble des étapes expérimentales a confirmé la validité des choix théoriques et des calculs effectués.
+
 # Schéma électronique
+
 ![[Schéma globale.png]]
