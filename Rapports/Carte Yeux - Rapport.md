@@ -308,10 +308,11 @@ Le signal en sortie du circuit oscillateur a été mesuré à l’aide d’un os
 - **Tension minimale :** 0V.
 - **Fréquence mesurée :** environ **2 kHz**, conforme aux calculs théoriques.
 
+![[oscillateur marqueur.png]]
 #### 2. Observation du fonctionnement de la LED
 
 - Avec l'oscilloscope, on observe que la LED clignote bien à la fréquence attendue.
-
+![[Capteur marqueur.png]]
 ### Tests et validation du fonctionnement
 
 Des tests ont été effectués en utilisant un oscilloscope branché a la sortie des capteurs pour vérifier la bonne transmission du signal :
@@ -365,7 +366,7 @@ On utilise un **filtre passe-haut** (filtre RC) pour supprimer la composante con
 
 #### Schéma de principe :
 
-![[S2/ROBOT/Rapports/3.Mettre en forme Vout/filtre.png]]
+![[filtre marqueur.png]]![[
 
 #### Calcul de la fréquence de coupure
 
@@ -431,7 +432,6 @@ On a testé trois cas :
 Le filtre a bien supprimé le décalage continu (courbe jaune) et a laissé passer uniquement la modulation utile (courbe bleu).
 
 ---
-
 ### Conclusion de la séance
 
 Le filtre RC mis en œuvre permet efficacement de :
@@ -473,7 +473,7 @@ Alors on décide d'éloigner la distance du capteur pour avoir Ve=0,4V et d'augm
 - Calcul de $R5 =\frac{V_{capteur}}{I}=\frac{0.4}{0.001}=400\ohm$ (valeur normalisé E12 : 390Ω)
 ### Simulation :
 
- ![[S2/ROBOT/Rapports/4.Amplifier Vout filtrée/Ampli.png]]
+ ![[Ampli marqueur.png]]
 
 - Entrée : signal sinusoïdal de 1,5 V crête à 2 kHz.
 - Résultat : signal amplifié à 9 V crête, sans distorsion notable.
