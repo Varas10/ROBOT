@@ -147,7 +147,7 @@ Le robot doit :
 - Nécessité d’un **découplage avec condensateurs 100µF** pour **chaque partie**
 
 # 1. Émettre et Recevoir de la lumière
-## **Étude théorique**
+## Étude théorique
 
 - **Type de lumière émise** : Infrarouge (λ = 950 nm).
 ### Schéma de routage
@@ -199,7 +199,7 @@ Le robot doit :
 - Lorsque la lumière est très faible (1) :
 	![[lumière à 1 - seance 1.png]]
 
-## **Étude pratique**
+## Étude pratique
 
 ### Câblage de la carte
 
@@ -249,13 +249,13 @@ L'étude pratique a permis de :
 
 ---
 # 2. Génération d’un signal de lumière codée
-## Analyse Théorique :
+## Etude Théorique :
 
-### **Objectif**
+### Objectif
 
 Le but de ce projet est de concevoir un système analogique permettant d’émettre un signal lumineux codé, qui pourra être reçu et traité par un récepteur optique. L’objectif est d’assurer une transmission fiable de l’information en utilisant la modulation lumineuse, ce qui permet également de réduire l’influence des lumières parasites présentes dans l’environnement.
 
-### **Principe du codage lumineux**
+### Principe du codage lumineux
 
 L’information est envoyée sous forme binaire avec une LED infrarouge :
 
@@ -279,13 +279,12 @@ Le **circuit oscillateur** est conçu de manière à produire un signal carré a
 - Un **rapport cyclique de 50 %**, garantissant un temps d’allumage et d’extinction égaux.
 - Une **fréquence de 2 kHz**, assurant une bonne séparation entre les impulsions.
 
-### **Schéma fonctionnel**
+### Schéma fonctionnel
 
 Le montage peut être représenté par le schéma fonctionnel suivant :
 
-
-
-### **Calculs des composants**
+![[signal carré généré et envoyé à l'émetteur.png]]
+### Calculs des composants
 
 La fréquence d’oscillation d’un NE555 en mode astable est donnée par la formule :
 $f=\frac{1.44}{(R1+2R2)×C}$
@@ -296,7 +295,7 @@ En choisissant :
 
 On obtient une fréquence de **2 kHz**, conforme aux spécifications du projet.
 
-## **Réalisation pratique**
+## Etude pratique
 
 ### Mesures et observations
 
@@ -366,7 +365,7 @@ On utilise un **filtre passe-haut** (filtre RC) pour supprimer la composante con
 
 #### Schéma de principe :
 
-![[Filtre passa haut.png]]
+![[S2/ROBOT/Rapports/3.Mettre en forme Vout/filtre.png]]
 
 #### Calcul de la fréquence de coupure
 
@@ -385,7 +384,7 @@ Objectif : que **$Flum = 2 kHz$** soit **dans la bande passante**, donc $Fc < Fl
 
 Ce filtre permet d’atténuer fortement les composantes inférieures à 200 Hz (dont le continu), tout en laissant passer efficacement la modulation de 2 kHz.
 
-### Conclusion du projet
+### Conclusion de l'étude théorique
 
 Le montage permet de :
 
@@ -421,12 +420,13 @@ On a testé trois cas :
 - **Signal Vout** (brut) connecté à l’entrée du filtre.
 - **Sortie filtrée** observée à l’oscilloscope.
 
-#### **Résultats observés :**
+#### Résultats observés :
 (Vout non filtré en jaune et Vout filtré en bleu) :
 - **Surface noire** : pas de signal modulé, donc Vs ≈ 0.
-	![[vout modulé surface noir.png]]
+	![[Vout filtré et vout non filtré fond noir seance 3.jpg.jpg]]
 - **Surface blanche** : modulation claire à 2 kHz visible sur Vs.
-	![[Vout modulé surface blanche.png]
+
+	![[Vout filtré et vout non filtré seance 3.jpg]]
 
 Le filtre a bien supprimé le décalage continu (courbe jaune) et a laissé passer uniquement la modulation utile (courbe bleu).
 
@@ -461,20 +461,19 @@ Un **amplificateur opérationnel non-inverseur** est retenu car il permet :
 
 - Une **impédance d’entrée élevée**, évitant de charger le montage précédent.
 - Une **conservation de la phase du signal** (pas d’inversion).
-
-
 ### Calculs :
 
 Normalement on doit avoir un gain $A=\frac{V_{e}}{V_{s}}=\frac{9}{1.5}=6$. 
+
 Cependant, 1,5V en entré c'est trop élevé. 
+
 Alors on décide d'éloigner la distance du capteur pour avoir Ve=0,4V et d'augmenter le gain = 15.
 
 - Calcul de $R6 = \frac{15*V_{out}}{I} = \frac{15*0.4}{0.001} = 6000Ω$ (Valeur normalisé E12 : 5600Ω)
 - Calcul de $R5 =\frac{V_{capteur}}{I}=\frac{0.4}{0.001}=400\ohm$ (valeur normalisé E12 : 390Ω)
-
 ### Simulation :
 
- ![[v out amplifié.png]]
+ ![[S2/ROBOT/Rapports/4.Amplifier Vout filtrée/Ampli.png]]
 
 - Entrée : signal sinusoïdal de 1,5 V crête à 2 kHz.
 - Résultat : signal amplifié à 9 V crête, sans distorsion notable.
@@ -484,7 +483,8 @@ Alors on décide d'éloigner la distance du capteur pour avoir Ve=0,4V et d'augm
 - **Saturation négative** du signal en cas de petites variations négatives du signal d’entrée.
 - Solution : insertion d’une **diode de redressement** en sortie de l’amplificateur pour éliminer la partie négative.
 -
-## Réalisation pratique et tests expérimentaux
+## Réalisation pratique
+
 - **Surface blanche** :
     - Entrée ≈ 1,5 V crête
     - Sortie ≈ 9 V crête (conforme au cahier des charges)
@@ -517,7 +517,7 @@ Un **détecteur de crête** est utilisé, composé de :
 - Un **condensateur** pour stocker la tension maximale.
 - Une **résistance** pour assurer la décharge progressive du condensateur (temps de réponse).
 
-![[Detecteur crête.png]]
+![[S2/ROBOT/Rapports/5.Démoduler Vout filtrée amplifié/Detecteur crête.png]]
 
 ### Calculs :
 
@@ -590,7 +590,7 @@ L’objectif est de commander une **diode électroluminescente (LED)** à partir
 ### Simulation :
 
 - Résultat attendu : la sortie bascule rapidement en fonction du dépassement du seuil Vref, et commande proprement l’allumage de la LED.
-![[Led.png]]
+![[Led affichage.png]]
 
 ## Etude pratique
 
