@@ -89,9 +89,9 @@ Le robot doit :
 
 ## Conception Fonctionnelle
 ### Ordre 1
-![[schéma ordre 1 - seance 0.png]]
+![[schéma ordre 1 - seance 0.png|350]]
 ### Ordre 2
-![[schéma ordre 2 -  seance 0.png]]
+![[schéma ordre 2 -  seance 0.png|350]]
 ### F1 : Détection du claquement de mains
 
 - Détection du **claquement de mains** entre **5 et 10 m** via un **micro à électret**.
@@ -162,7 +162,7 @@ Le robot doit :
 
 - **Trajet du courant** : en noir sur le schéma pour visualiser le chemin de l’émission lumineuse.
     
-	![[Routage, chemin du courant entre les deux capteurs - Seance 1.jpg]]
+	![[Routage, chemin du courant entre les deux capteurs - Seance 1.jpg|350]]
 ### Fonctionnement du montage transistor
 
 - Choix du montage : **Montage collecteur commun** pour obtenir une **tension Vout** qui augmente avec l’intensité lumineuse reçue.
@@ -193,11 +193,11 @@ Le robot doit :
 
 ## Résultats attendu :
 - Lorsque la lumière est très forte (10) :
-	![[Lumière a 10 - seance 1.png]]
+	![[Lumière a 10 - seance 1.png|350]]
 - Lorsque la lumière est moyenne (5) :
-	![[lumière à 5 - seance 1.png]]
+	![[lumière à 5 - seance 1.png|350]]
 - Lorsque la lumière est très faible (1) :
-	![[lumière à 1 - seance 1.png]]
+	![[lumière à 1 - seance 1.png|350]]
 
 ## Étude pratique
 
@@ -224,10 +224,10 @@ Le robot doit :
 - Relevés :
     - Signal codé généré par l'oscillateur (en bleu) et signal reçu par le capteur:
 		- Surface blanche :
-		![[fond blanc seance 2.jpg]]
+		![[fond blanc seance 2.jpg|350]]
 		
 		- Surface noir :
-		![[fond noir seance 2.jpg]]
+		![[fond noir seance 2.jpg|350]]
 ### Résultats observés
 
 - Lorsque la surface est blanche, $V_{signalcarré_{capté}}$ présente une réponse claire et modulée.
@@ -283,7 +283,7 @@ Le **circuit oscillateur** est conçu de manière à produire un signal carré a
 
 Le montage peut être représenté par le schéma fonctionnel suivant :
 
-![[signal carré généré et envoyé à l'émetteur.png]]
+![[signal carré généré et envoyé à l'émetteur.png|350]]
 ### Calculs des composants
 
 La fréquence d’oscillation d’un NE555 en mode astable est donnée par la formule :
@@ -308,11 +308,11 @@ Le signal en sortie du circuit oscillateur a été mesuré à l’aide d’un os
 - **Tension minimale :** 0V.
 - **Fréquence mesurée :** environ **2 kHz**, conforme aux calculs théoriques.
 
-![[oscillateur marqueur.png]]
+![[oscillateur marqueur.png|350]]
 #### 2. Observation du fonctionnement de la LED
 
 - Avec l'oscilloscope, on observe que la LED clignote bien à la fréquence attendue.
-![[Capteur marqueur.png]]
+![[Capteur marqueur.png|350]]
 ### Tests et validation du fonctionnement
 
 Des tests ont été effectués en utilisant un oscilloscope branché a la sortie des capteurs pour vérifier la bonne transmission du signal :
@@ -327,14 +327,14 @@ Des tests ont été effectués en utilisant un oscilloscope branché a la sortie
     - Signal carré propre.
     - Fréquence stable à 2 kHz.
 	- Vlumière est en jaune et Vcondensateur est en bleu.
-	 ![[Vlum (jaune) et Vc (bleu).jpg]]
+	 ![[Vlum (jaune) et Vc (bleu).jpg|350]]
 	
 2. **Signal lumineux détecté par la photodiode** :
     
     - Même fréquence de 2 kHz.
     - Amplitude variable en fonction de la distance et de l’alignement du capteur.
-    - Fond blanc :![[fond blanc seance 2.jpg]]
-	- Fond noir :![[fond noir seance 2.jpg]]
+    - Fond blanc :![[fond blanc seance 2.jpg|350]]
+	- Fond noir :![[fond noir seance 2.jpg|350]]
 	
 ### Difficultés rencontrées et solutions apportées
 
@@ -366,7 +366,7 @@ On utilise un **filtre passe-haut** (filtre RC) pour supprimer la composante con
 
 #### Schéma de principe :
 
-![[filtre marqueur.png]]
+![[filtre marqueur.png|350]]
 
 #### Calcul de la fréquence de coupure
 
@@ -402,7 +402,7 @@ Le montage permet de :
 - Signal d’entrée Ve : sinusoïdal, amplitude 8 V, fréquence variable (Ve en bleu).
 - Signal de sortie Vs : réponse du filtre (Vs en jaune).
 	
-- ![[filtrage ve.png]]
+- ![[filtrage ve.png|350]]
 
 On a testé trois cas :
 
@@ -424,10 +424,10 @@ On a testé trois cas :
 #### Résultats observés :
 (Vout non filtré en jaune et Vout filtré en bleu) :
 - **Surface noire** : pas de signal modulé, donc Vs ≈ 0.
-	![[Vout filtré et vout non filtré fond noir seance 3.jpg.jpg]]
+	![[Vout filtré et vout non filtré fond noir seance 3.jpg.jpg|350]]
 - **Surface blanche** : modulation claire à 2 kHz visible sur Vs.
 
-	![[Vout filtré et vout non filtré seance 3.jpg]]
+	![[Vout filtré et vout non filtré seance 3.jpg|350]]
 
 Le filtre a bien supprimé le décalage continu (courbe jaune) et a laissé passer uniquement la modulation utile (courbe bleu).
 
@@ -473,7 +473,7 @@ Alors on décide d'éloigner la distance du capteur pour avoir Ve=0,4V et d'augm
 - Calcul de $R5 =\frac{V_{capteur}}{I}=\frac{0.4}{0.001}=400\ohm$ (valeur normalisé E12 : 390Ω)
 ### Simulation :
 
- ![[Ampli marqueur.png]]
+ ![[Ampli marqueur.png|350]]
 
 - Entrée : signal sinusoïdal de 1,5 V crête à 2 kHz.
 - Résultat : signal amplifié à 9 V crête, sans distorsion notable.
@@ -488,11 +488,11 @@ Alors on décide d'éloigner la distance du capteur pour avoir Ve=0,4V et d'augm
 - **Surface blanche** :
     - Entrée ≈ 1,5 V crête
     - Sortie ≈ 9 V crête (conforme au cahier des charges)
-	![[fond blanc amplifier et non amplifier - Seance 4.jpg]]
+	![[fond blanc amplifier et non amplifier - Seance 4.jpg|350]]
 - **Surface noire** :
     - Entrée ≈ 0 V
     - Sortie ≈ 0 V
-    ![[fond noir vout filitré, ampli et non ampli - seance 4.jpg]]
+    ![[fond noir vout filitré, ampli et non ampli - seance 4.jpg|350]]
 ### Conclusion :
 
 Le montage est fonctionnel et conforme aux exigences. Le signal est propre, amplifié et prêt pour l’étape de **démodulation**.
@@ -535,7 +535,7 @@ Un **détecteur de crête** est utilisé, composé de :
 - Résultat attendu : signal de sortie continue ≈ 9 V par rapport au signal carrée à 9 V crête.
 
 - Ve en jaune et Vout démodulé en bleu.
-	![[ve et vs seance5.jpg]]
+	![[ve et vs seance5.jpg|350]]
 
 ### Test du chemin complet :
 
@@ -543,11 +543,11 @@ Un **détecteur de crête** est utilisé, composé de :
     - Entrée : ≈ 6 V crête
     - sortie Vsuivi : ≈ 6 V (tension stable)
 	- (Vsuivi en bleu et Ve en jaune)
-    ![[surface blanche- seance 6.jpg]]
+    ![[surface blanche- seance 6.jpg|350]]
 - **Surface noire** :
     - Entrée : ≈ 0 V
     - Vsuivi : ≈ 0 V (tension quasi nulle)
-    ![[surface noir - séance 6.jpg]]
+    ![[surface noir - séance 6.jpg|350]]
 - Comportement du montage conforme aux attentes.
 
 ### Conclusion :
@@ -590,7 +590,7 @@ L’objectif est de commander une **diode électroluminescente (LED)** à partir
 ### Simulation :
 
 - Résultat attendu : la sortie bascule rapidement en fonction du dépassement du seuil Vref, et commande proprement l’allumage de la LED.
-![[Led affichage.png]]
+![[Led affichage.png|350]]
 
 ## Etude pratique
 
@@ -599,11 +599,11 @@ L’objectif est de commander une **diode électroluminescente (LED)** à partir
 - Cas 1 – **Surface blanche** :
     - Vsuivi mesuré ≈ 6 V
     - Vsuivi > Vref → LED **allumée** 
-	![[surface blanche- seance 6.jpg]]
+	![[surface blanche- seance 6.jpg|350]]
 - Cas 2 – **Surface noire** :
     - Vsuivi mesuré ≈ 0 V
     - Vsuivi < Vref → LED **éteinte** 
-	![[surface noir - séance 6.jpg]]
+	![[surface noir - séance 6.jpg|350]]
 ### Ajustements :
 
 - Si besoin, Vref peut être modifiée pour affiner la sensibilité du déclenchement.
